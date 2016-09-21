@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AIPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'AIP.dbo.G1_User' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+  <EntityType Name="G1_User">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="name" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="AIPModelStoreContainer">
+    <EntitySet Name="G1_User" EntityType="Self.G1_User" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[G1_User].[id] AS [id], 
+[G1_User].[name] AS [name]
+FROM [dbo].[G1_User] AS [G1_User]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

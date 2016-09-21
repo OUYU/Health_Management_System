@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AIPModel12StoreContainer" CdmEntityContainer="AIPEntities20">
+    <EntitySetMapping Name="G3_SystemAdministrator_HealthLink">
+      <EntityTypeMapping TypeName="AIPModel12.G3_SystemAdministrator_HealthLink">
+        <MappingFragment StoreEntitySet="G3_SystemAdministrator_HealthLink">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

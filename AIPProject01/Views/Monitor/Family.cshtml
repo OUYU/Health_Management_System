@@ -1,0 +1,68 @@
+﻿@model AIPProject01.ViewModels.Relationship
+@{
+    ViewBag.Title = "身心健康與安全管理系統";
+}
+@section featured
+    {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+        </div>
+    </section>
+}
+
+<section>
+    <div class="container">
+        <div style="overflow:auto; border: 2px #ccc solid; padding: 10px">
+            <div>
+                <input class="float_right" type="button" value="新增家屬" style="font-size:20px; width:30%; margin-left:70%" onclick="AddFamily()" />
+            </div>
+            <p></p>
+            <div style="overflow:hidden;">
+                @{
+                    <div style="overflow:hidden;">
+                        @{
+                            if (@Model.RelationshipKey == 0)
+                            {
+                                <p><span class="label" style='color:black'>您目前還沒有家屬</span></p>
+                            }
+                            else
+                            {
+                                <p><span class="label" style='color:black'>您目前的家屬</span></p>
+                                <table class="table">
+                                    <tr>
+                                        <th class="col-sm-1">使用者頭像</th>
+                                        <th class="col-sm-1">使用者名稱</th>
+                                        <th class="col-sm-1">操作選項</th>
+                                    </tr>
+                                    @foreach (var item in Model.RelationshipList)
+                                    {
+                                        <tr>
+                                            <td class="active">
+                                                Photo
+                                            </td>
+                                            <td class="info">
+                                                @item.email
+                                            </td>
+                                            <td class="warning">
+                                                <a href="@Url.Action("HealthyInformation", "Monitor", new { WhereKey = @Model.WhereKey , Name = @item.email})" class="btn btn-primary" style="color:white;">
+                                                    健康狀況
+                                                </a>
+                                                <a href="@Url.Action("UserView", "Nutrition", new { Name = @item.email, WhereKey = @Model.WhereKey })" class="btn btn-primary" style="color:white;">
+                                                    醫生建議
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </table>
+                            }
+                        }
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>

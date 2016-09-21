@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AIPModel18StoreContainer" CdmEntityContainer="GyroValues">
+    <EntitySetMapping Name="G3_Measure_GyroValues">
+      <EntityTypeMapping TypeName="AIPModel18.G3_Measure_GyroValues">
+        <MappingFragment StoreEntitySet="G3_Measure_GyroValues">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Userid" ColumnName="Userid" />
+          <ScalarProperty Name="RawX" ColumnName="RawX" />
+          <ScalarProperty Name="RawY" ColumnName="RawY" />
+          <ScalarProperty Name="RawZ" ColumnName="RawZ" />
+          <ScalarProperty Name="MeasurementDate" ColumnName="MeasurementDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Score" ColumnName="Score" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

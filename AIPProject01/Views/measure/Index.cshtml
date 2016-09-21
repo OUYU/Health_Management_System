@@ -1,0 +1,53 @@
+﻿@{
+    ViewBag.Title = "身心健康與安全管理系統";
+}
+
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+        </div>
+    </section>
+}
+
+<section>
+    <aside class="float-left" style="box-sizing:border-box; width:50%; padding: 10px">
+        <b style="font-size:20px;">生理量測</b>
+        <ul>
+            <li>
+                <div style='background-color:white;'>
+                    <a href="BloodPressure" style='font-size:16px; text-decoration: none; color: black; padding: 3px 18px;
+                               font-weight:400; display: block'>
+                        血壓量測
+                    </a>
+                </div>
+            </li>
+
+            <li>
+                <div style='background-color:white;'>
+                    <a href="ABG" style='font-size:16px; text-decoration: none; color: black; padding: 3px 18px;
+                               font-weight: 400; display: block'>
+                        血氧量測
+                    </a>
+                </div>
+            </li>
+
+            <li>
+                <div style='background-color:white;'>
+                    <a href="BloodGlucose" style='font-size:16px; text-decoration: none; color: black; padding: 3px 18px;
+                               font-weight: 400; display: block'>
+                        血糖量測
+                    </a>
+                </div>
+            </li>
+        </ul>
+        
+    </aside>
+    <div class="float-left" style="box-sizing:border-box; font-size:20px; width:50%; padding: 10px">
+        <b>心理量測</b>
+    </div>
+
+</section>

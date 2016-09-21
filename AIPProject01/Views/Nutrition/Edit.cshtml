@@ -1,0 +1,70 @@
+﻿@model AIPProject01.Models.ViewModel.G3_Nutrition_Nutrition
+
+@{
+    ViewBag.Title = "身心健康與安全管理系統";
+}
+
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+            @*<p>
+                    To learn more about ASP.NET MVC visit
+                    <a href="http://asp.net/mvc" title="ASP.NET MVC Website">http://asp.net/mvc</a>.
+                    The page features <mark>videos, tutorials, and samples</mark> to help you get the most from ASP.NET MVC.
+                    If you have any questions about ASP.NET MVC visit
+                    <a href="http://forums.asp.net/1146.aspx/1?MVC" title="ASP.NET MVC Forum">our forums</a>.
+                </p>*@
+            <p>
+            </p>
+        </div>
+    </section>
+}
+
+<section>
+    <div class="container">
+        <div style="overflow:auto; height: 650px; border: 2px #ccc solid; padding: 10px">
+            <header style="font-size:20px;">
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true)
+
+                    <fieldset>
+                        @Html.HiddenFor(model => model.Id)
+                        @Html.HiddenFor(model => model.UserId)
+                        @Html.HiddenFor(model => model.Doctor)
+
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.Title, "建議標題")
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.Title)
+                            @Html.ValidationMessageFor(model => model.Title)
+                        </div>
+
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.Content, "建議內容")
+                        </div>
+
+                        @Html.TextAreaFor(model => model.Content)
+
+                        <p>
+                            <button type="submit" class="btn btn-primary">儲存</button>
+                            <a href="@Url.Action("View", "Nutrition", new { id = Model.UserId })" class="btn btn-primary" style="color:white;">
+                                返回
+                            </a>
+                        </p>
+                    </fieldset>
+                }
+                @section Scripts {
+                    @Scripts.Render("~/bundles/jqueryval")
+                }
+            </header>
+        </div>
+    </div>
+</section>

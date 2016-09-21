@@ -1,0 +1,35 @@
+﻿@model List<AIPProject01.Models.ViewModel.G3_User>
+
+@{
+    ViewBag.Title = "身心健康與安全管理系統";
+}
+
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+        </div>
+    </section>
+}
+
+<section>
+    <header style="font-size:20px;">
+        <b>註冊名單</b>
+    </header>
+
+    @foreach (var item in Model)
+    {
+        <p>
+            <span class="label">@item.ID</span>
+            <span>@item.NAME</span>
+            <span>@item.PASSWORD</span>
+            <span>@item.SEX</span>
+        </p>
+    }
+
+    <input type="button" value="繼續" onclick="Userdelete()" />
+    <input type="button" value="返回主選單" onclick="Account()" />
+</section>

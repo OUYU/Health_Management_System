@@ -1,0 +1,52 @@
+﻿@model AIPProject01.ViewModels.BreathIn
+
+@{
+    ViewBag.Title = "身心健康與安全管理系統";
+}
+
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+        </div>
+    </section>
+}
+
+<section>
+    <div class="container">
+        <div style="overflow:auto; border: 2px #ccc solid; padding: 10px">
+            <header style="font-size:20px;">
+                <div>
+                    <form action="BreathOutput" method="post">
+                        <p>
+                            <h3>
+                                呼吸強度 : <input id="Air" name="Air" type="text" pattern="[0-9]*" required />
+                            </h3>
+                        </p>
+                        <p>
+                            <h3>
+                                量測日期 : <input id="date" name="date" type="date" required />
+                            </h3>
+                        </p>
+                        <p>
+                            <h3>
+                                量測時間 : <input id="time" name="time" type="time" required />
+                            </h3>
+                        </p>
+                        <p>
+                            <h3>
+                                <input id="InputController" type="hidden" name="InputController" value="1" />
+                            </h3>
+                        </p>
+
+                        <input type="submit" value="提交" />
+                        <input type="reset" value="重新填寫" />
+                    </form>
+                </div>
+            </header>
+        </div>
+    </div>
+</section>

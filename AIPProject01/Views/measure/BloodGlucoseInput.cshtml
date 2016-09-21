@@ -1,0 +1,56 @@
+﻿@model AIPProject01.ViewModels.BloodGlucoseIn
+
+@{
+    ViewBag.Title = "身心健康與安全管理系統";
+}
+
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+        </div>
+    </section>
+}
+
+<section>
+    <div class="container">
+        <div style="overflow:auto; border: 2px #ccc solid; padding: 10px">
+            <header style="font-size:20px;">
+                <div>
+                    <form action="BloodGlucoseOutput" method="post">
+                        <p>
+                            <h3>
+                                量測時間 :
+                                <select id="MeasureTime" name="MeasureTime" required>
+                                    <option>起床空腹</option>
+                                    <option>飯後兩小時</option>
+                                </select>
+                            </h3>
+                        </p>
+                        <p>
+                            <h3>
+                                血糖值 : <input id="GLU_AC" name="GLU_AC" type="text" pattern="[0-9]*" required /> mg/dl
+                            </h3>
+                        </p>
+                        <p>
+                            <h3>
+                                量測日期 : <input id="date" name="date" type="date" required />
+                            </h3>
+                        </p>
+                        <p>
+                            <h3>
+                                量測時間 : <input id="time" name="time" type="time" required />
+                            </h3>
+                        </p>
+
+                        <input type="submit" value="提交" />
+                        <input type="reset" value="重新填寫" />
+                    </form>
+                </div>
+            </header>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,64 @@
+﻿@model AIPProject01.Models.ViewModel.G3_HealthEducation
+
+@{
+    ViewBag.Title = "身心健康與安全管理系統";
+}
+
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+            @*<p>
+                    To learn more about ASP.NET MVC visit
+                    <a href="http://asp.net/mvc" title="ASP.NET MVC Website">http://asp.net/mvc</a>.
+                    The page features <mark>videos, tutorials, and samples</mark> to help you get the most from ASP.NET MVC.
+                    If you have any questions about ASP.NET MVC visit
+                    <a href="http://forums.asp.net/1146.aspx/1?MVC" title="ASP.NET MVC Forum">our forums</a>.
+                </p>*@
+            <p>
+            </p>
+        </div>
+    </section>
+}
+
+
+
+<section>
+    <div class="container">
+        <div style="overflow:auto; height: 650px; border: 2px #ccc solid; padding: 10px">
+            <header style="font-size:20px;">
+                <h2>確定刪除文章?</h2>
+                <fieldset>
+                    <div class="display-label">
+                        <h3>標題:</h3>
+                    </div>
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.Title)
+                    </div>
+
+                    <div class="display-label">
+                        <h3>文章內容:</h3>
+                    </div>
+                    <div class="display-field">
+                        <span style="white-space: pre-wrap">@Html.DisplayFor(model => model.Content)</span>
+                    </div>
+                </fieldset>
+                <hr>
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    <p>
+                        <button type="submit" class="btn btn-primary">確定</button>
+                        <a href="@Url.Action("Details", "HealthEducation", new { id = Model.Id })" class="btn btn-primary" style="color:white;">
+                            返回
+                        </a>
+                    </p>
+                }
+            </header>
+        </div>
+    </div>
+</section>

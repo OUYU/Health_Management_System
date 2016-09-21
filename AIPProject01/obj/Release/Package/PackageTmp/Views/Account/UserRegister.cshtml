@@ -1,0 +1,57 @@
+﻿@{
+    ViewBag.Title = "身心健康與安全管理系統";
+}
+
+@*@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+        </div>
+    </section>
+}
+
+<form class="form-horizontal" action="RegisterOutput" method="post">
+    <div class="form-group">
+        <label class="col-sm-2 control-label">帳號</label>
+        <div class="col-sm-3">
+            <input id="name" name="name" type="text" class="form-control" placeholder="帳號" pattern="[A-Za-z0-9]*" required />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">密碼</label>
+        <div class="col-sm-3">
+            <input id="password" name="password" type="text" class="form-control" placeholder="密碼" pattern="[A-Za-z0-9]*" required />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">性別</label>
+        <div class="form-group col-sm-1">
+            <select id="sex" name="sex" class="form-control" required>
+                <option>male</option>
+                <option>female</option>
+            </select>
+        </div>
+    </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-primary">提交</button>
+                <button type="reset" class="btn btn-primary">重新填寫</button>
+                <button type="submit" class="btn btn-primary" onclick="Userdelete()">刪除帳號</button>
+            </div>
+        </div>
+</form>*@
+
+<script>
+    if (confirm(" 將跳轉至本系統的註冊頁面，請問使用者確定前往嗎？"))
+    {
+        setTimeout("Register()", 100);
+    }
+    else
+    {
+        setTimeout("re()", 100);
+    }
+     
+</script>

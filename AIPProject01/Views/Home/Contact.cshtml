@@ -1,0 +1,92 @@
+﻿@model List<AIPProject01.ViewModels.G1User>
+@{
+    ViewBag.Title = "身心健康與安全管理系統";
+}
+
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+            @*<p>
+                To learn more about ASP.NET MVC visit
+                <a href="http://asp.net/mvc" title="ASP.NET MVC Website">http://asp.net/mvc</a>.
+                The page features <mark>videos, tutorials, and samples</mark> to help you get the most from ASP.NET MVC.
+                If you have any questions about ASP.NET MVC visit
+                <a href="http://forums.asp.net/1146.aspx/1?MVC" title="ASP.NET MVC Forum">our forums</a>.
+            </p>*@
+        </div>
+    </section>
+}
+
+<section>
+    <div id="menu" class="float-left" style='width:162px; border-top-style:solid; border-top-width:3px; border-top-color:blue'>
+        <div style='background-color:white;'>
+            <a href="/home/Idea" style='font-size:30px; text-decoration: none; color: black; padding: 3px 18px;
+                       font-weight:400; display: block; border-style:solid; border-width:3px; border-color:blue;
+                       border-top-style:none'>
+                開發理念
+            </a>
+        </div>
+        <div style='background-color:white;'>
+            <a href="/home/Team" style='font-size:30px; text-decoration: none; color: black; padding: 3px 18px;
+                       font-weight: 400; display: block; border-style:solid; border-width:3px; border-color:blue;
+                       border-top-style:none'>
+                開發團隊
+            </a>
+        </div>
+        <div style='background-color:white;'>
+            <a href="/home/Contact" style='font-size:30px; text-decoration: none; color: black; padding: 3px 18px;
+                       font-weight: 400; display: block; border-style:solid; border-width:3px; border-color:blue;
+                       border-top-style:none'>
+                聯絡我們
+            </a>
+        </div>
+    </div>
+    <div class="checkbox float-right" style="box-sizing:border-box; border-style:double; width:80%">
+        <div style="overflow:scroll; height: 480px; border: 2px #ccc solid; padding: 10px">
+            <section>
+                <header style="font-size:20px;">
+                    <b>連絡資訊</b>
+                </header>
+
+                @foreach (var item in Model)
+                {
+                    <p>
+                        <span class="label">@item.id</span>
+                        <span>@item.name</span>
+                    </p>
+                }
+            </section>
+
+            <section>
+                <header style="font-size:20px;">
+                    <b>Email</b>
+                </header>
+                <p>
+                    <span class="label"></span>
+                    <span><a href="#">###</a></span>
+                </p>
+                <p>
+                    <span class="label"></span>
+                    <span><a href="#">###</a></span>
+                </p>
+                <p>
+                    <span class="label"></span>
+                    <span><a href="#">###</a></span>
+                </p>
+            </section>
+
+            <section>
+                <header style="font-size:20px;">
+                    <b>AAA</b>
+                </header>
+                <p>
+                    <br />
+                </p>
+            </section>
+        </div>
+    </div>
+</section>

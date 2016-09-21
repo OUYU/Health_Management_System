@@ -1,0 +1,43 @@
+﻿@model AIPProject.ViewModels.BloodGlucoseOut
+
+@{
+    ViewBag.Title = "血糖量測結果";
+}
+
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+        </div>
+    </section>
+}
+
+    <p>
+        <h2>
+        您的血糖值 : @Model.GLU_AC mg/dl
+        </h2>
+    </p>
+
+    <p>
+        <h2>
+        您的狀態 : @Model.Status
+        </h2>
+    </p>
+
+    <p>
+        <h2>
+        您的健康等級 : @Model.Level
+        </h2>
+    </p>
+
+
+<p>
+    <div>
+        <a href="/measure/BloodGlucoseAE">繼續</a>
+        <a href="/measure/BloodGlucose">返回血糖量測選單</a>
+        <a href="/measure/Index">返回主選單</a>
+    </div>
+</p>

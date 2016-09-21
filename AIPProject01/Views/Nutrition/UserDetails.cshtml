@@ -1,0 +1,75 @@
+﻿@model AIPProject01.Models.ViewModel.SystemNutrition
+
+@{
+    ViewBag.Title = "身心健康與安全管理系統";
+    ViewBag.Message = "建議檢視.健康建議";
+}
+
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+            @*<p>
+                    To learn more about ASP.NET MVC visit
+                    <a href="http://asp.net/mvc" title="ASP.NET MVC Website">http://asp.net/mvc</a>.
+                    The page features <mark>videos, tutorials, and samples</mark> to help you get the most from ASP.NET MVC.
+                    If you have any questions about ASP.NET MVC visit
+                    <a href="http://forums.asp.net/1146.aspx/1?MVC" title="ASP.NET MVC Forum">our forums</a>.
+                </p>*@
+            <p>
+            </p>
+        </div>
+    </section>
+}
+
+
+
+<section>
+    <div class="container">
+        <div style="overflow:auto; height: 650px; border: 2px #ccc solid; padding: 10px">
+            <header style="font-size:20px;">
+                <fieldset>
+                    @if(@Model.WhereKey == 0)
+                    {
+                        <div class="display-label">
+                            <h1>我的健康建議</h1>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="display-label">
+                            <h1>@Model.UserName 的健康建議</h1>
+                        </div>
+                    }
+                    
+                    <div class="display-label">
+                        <h3>標題:</h3>
+                    </div>
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.Nutrition.Title)
+                    </div>
+
+                    <div class="display-label">
+                        <h3>文章內容:</h3>
+                    </div>
+                    <div class="display-field">
+                        <span style="white-space: pre-wrap">@Html.DisplayFor(model => model.Nutrition.Content)</span>
+                    </div>
+                    <hr>
+                    發表於
+                    @Html.DisplayFor(model => model.Nutrition.Date)
+                    <hr>
+
+                </fieldset>
+                <p>
+                        <a href="@Url.Action("UserView", "Nutrition", new {WhereKey = Model.WhereKey, Name = Model.UserName })" class="btn btn-primary" style="font-size:20px; width:30%; margin:15px">
+                            返回
+                        </a>
+                </p>
+            </header>
+        </div>
+    </div>
+</section>

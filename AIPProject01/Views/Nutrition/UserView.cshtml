@@ -1,0 +1,105 @@
+﻿@model  AIPProject01.Models.ViewModel.SystemNutrition
+@{
+    ViewBag.Title = "身心健康與安全管理系統";
+}
+
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+            @*<p>
+                    To learn more about ASP.NET MVC visit
+                    <a href="http://asp.net/mvc" title="ASP.NET MVC Website">http://asp.net/mvc</a>.
+                    The page features <mark>videos, tutorials, and samples</mark> to help you get the most from ASP.NET MVC.
+                    If you have any questions about ASP.NET MVC visit
+                    <a href="http://forums.asp.net/1146.aspx/1?MVC" title="ASP.NET MVC Forum">our forums</a>.
+                </p>*@
+            <p>
+            </p>
+        </div>
+    </section>
+}
+
+<section>
+    <div class="container">
+        <div class="table-responsive" style="overflow:auto; height: 650px; border: 2px #ccc solid; padding: 10px">
+            <header style="font-size:20px;">
+                @{
+                    if (@Model != null)
+                    {
+                        if (@Model.WhereKey == 0)
+                        {
+                            <div class="display-label">
+                                <h1>我的健康建議</h1>
+                            </div>
+                        }
+                        else if (@Model.WhereKey == 1)
+                        {
+                            <div class="display-label">
+                                <h3>家屬 @Model.UserName</h3>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="display-label">
+                                <h3>好友 @Model.UserName</h3>
+                            </div>
+                        }
+                        <table class="table">
+                            <tr>
+                                <th class="col-sm-1">編號</th>
+                                <th class="col-sm-1">標題</th>
+                                <th class="col-sm-1">建議醫生</th>
+                                <th class="col-sm-1">建議日期</th>
+                            </tr>
+                            @foreach (var item in Model.NutritionList)
+                            {
+                                <tr>
+                                    <td class="active">
+                                        @item.Id
+                                    </td>
+                                    <td class="info">
+                                        @Html.ActionLink(item.Title, "UserDetails", new { id = item.Id, WhereKey = @Model.WhereKey, name = @Model.UserName })
+                                    </td>
+                                    <td class="warning">
+                                        @item.Doctor
+                                    </td>
+                                    <td class="success">
+                                        @item.Date
+                                    </td>
+                                </tr>
+                            }
+                        </table>
+                    }
+                    else
+                    {
+                        <h3>系統發生錯誤，請管理員盡速處理</h3>
+                    }
+                }
+            </header>
+            @{
+                if (@Model.WhereKey == 0)
+                {
+                    <a href="@Url.Action("UserHealthyInformation", "Monitor")" class="btn btn-primary" style="font-size:20px; width:30%; margin:15px">
+                        返回
+                    </a>
+                }
+                else if (@Model.WhereKey == 1)
+                {
+                    <a href="@Url.Action("Family", "Monitor")" class="btn btn-primary" style="font-size:20px; width:30%; margin:15px">
+                        返回
+                    </a>
+                }
+                else
+                {
+                    <a href="@Url.Action("Friends", "Monitor")" class="btn btn-primary" style="font-size:20px; width:30%; margin:15px">
+                        返回
+                    </a>
+                }
+            }
+        </div>
+    </div>
+</section>

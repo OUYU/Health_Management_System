@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AIPModel17StoreContainer" CdmEntityContainer="GSR">
+    <EntitySetMapping Name="G3_Measure_GSR">
+      <EntityTypeMapping TypeName="AIPModel17.G3_Measure_GSR">
+        <MappingFragment StoreEntitySet="G3_Measure_GSR">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Userid" ColumnName="Userid" />
+          <ScalarProperty Name="SkinConductance" ColumnName="SkinConductance" />
+          <ScalarProperty Name="SkinResistance" ColumnName="SkinResistance" />
+          <ScalarProperty Name="SkinConductanceVoltage" ColumnName="SkinConductanceVoltage" />
+          <ScalarProperty Name="MeasurementDate" ColumnName="MeasurementDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Score" ColumnName="Score" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

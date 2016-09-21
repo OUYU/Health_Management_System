@@ -1,0 +1,102 @@
+﻿@model IPagedList<AIPProject01.Models.ViewModel.G3_HealthEducation>
+@using PagedList.Mvc;
+@using PagedList;
+
+@{
+    ViewBag.Title = "身心健康與安全管理系統";
+}
+
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+            @*<p>
+                    To learn more about ASP.NET MVC visit
+                    <a href="http://asp.net/mvc" title="ASP.NET MVC Website">http://asp.net/mvc</a>.
+                    The page features <mark>videos, tutorials, and samples</mark> to help you get the most from ASP.NET MVC.
+                    If you have any questions about ASP.NET MVC visit
+                    <a href="http://forums.asp.net/1146.aspx/1?MVC" title="ASP.NET MVC Forum">our forums</a>.
+                </p>*@
+            <p>
+            </p>
+        </div>
+    </section>
+}
+
+
+
+<div class="container">
+    <div style="overflow:auto; height: 650px; border: 2px #ccc solid; padding: 10px">
+        <header style="font-size:20px;">
+            <p>
+                <a href="@Url.Action("Create", "HealthEducation")" class="btn btn-info" style="color:white;">
+                    新增文章
+                </a>
+                <a href="#" class="btn btn-info" style="color:white;">
+                    管理文章
+                </a>
+            </p>
+
+            @using (@Html.BeginForm("Index", "HealthEducation", FormMethod.Get))
+            {
+
+                <form class="form-inline">
+                    <p>
+                        <div class="form-group">
+                            <input name="search" id="search" type="text" placeholder="請輸入文章名稱..." style="width:500px;">
+                            <button type="submit" class="btn btn-primary">搜尋文章</button>
+                        </div>
+                    </p>
+                </form>
+            }
+
+            <table class="table">
+                @if (Model.Count() == 0)
+                {
+                    <tr>
+                        <td colspan="4">
+                            找不到符合項目 !
+                        </td>
+                    </tr>
+                }
+                else
+                {
+                    <tr>
+                        <th width="60%">
+                            <h3>標題</h3>
+                        </th>
+                        <th width="20%">
+                            <h3>作者</h3>
+                        </th>
+                        <th width="20%">
+                            <h3>發表日期</h3>
+                        </th>
+                        <th></th>
+                    </tr>
+
+                    foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.ActionLink(item.Title, "Details", new { id = item.Id })
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.userId)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Date)
+                            </td>
+                        </tr>
+                    }
+                }
+
+            </table>
+
+            @Html.PagedListPager(Model, page => Url.Action("Index", new { page, searchBy = Request.QueryString["searchBy"], search = Request.QueryString["search"] })
+                                                      , new PagedListRenderOptions() { Display = PagedListDisplayMode.IfNeeded })
+        </header>
+    </div>
+</div>

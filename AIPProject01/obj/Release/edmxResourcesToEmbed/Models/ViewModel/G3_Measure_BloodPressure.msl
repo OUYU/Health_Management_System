@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AIPModel2StoreContainer" CdmEntityContainer="AIPEntities7">
+    <EntitySetMapping Name="G3_Measure_BloodPressure">
+      <EntityTypeMapping TypeName="AIPModel2.G3_Measure_BloodPressure">
+        <MappingFragment StoreEntitySet="G3_Measure_BloodPressure">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Userid" ColumnName="Userid" />
+          <ScalarProperty Name="SBP" ColumnName="SBP" />
+          <ScalarProperty Name="DBP" ColumnName="DBP" />
+          <ScalarProperty Name="MeasurementDate" ColumnName="MeasurementDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Score" ColumnName="Score" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

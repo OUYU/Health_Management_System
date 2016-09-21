@@ -1,0 +1,81 @@
+﻿@model AIPProject01.ViewModels.AddFamily
+@{
+    ViewBag.Title = "身心健康與安全管理系統";
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+        </div>
+    </section>
+}
+
+<section>
+    <div class="container">
+        <div style="overflow:auto; height: 650px; border: 2px #ccc solid; padding: 10px">
+            <header style="font-size:20px;">
+                <div>
+                    <form action="AddFamilyOutput" method="post">
+                        <p>
+                            <span>
+                                請輸入使用者名稱 :
+                            </span>
+                        </p>
+                        <input id="TargetNAME" name="TargetNAME" type="text" required />
+                        <input type="submit" value="搜尋" />
+                        <input type="button" value="返回" onclick="reFamily()" />
+                    </form>
+
+                    @{
+                        if (@Model.TargetNAME == null)
+                        {
+                            <p><span>沒有這位使用者</span></p>
+                        }
+                        else
+                        {
+                            <table class="table">
+                                <tr>
+                                    <th class="col-sm-1">使用者頭像</th>
+                                    <th class="col-sm-1">使用者名稱</th>
+                                    <th class="col-sm-1">操作選項</th>
+                                </tr>
+                                <tr>
+                                    <td class="active">
+                                        Photo
+                                    </td>
+                                    <td class="info">
+                                        @Model.TargetNAME
+                                    </td>
+                                    @if (@Model.Relationship == "自己")
+                                    {
+                                        <td class="warning">
+                                            <input class="float-right" type="button" value="自己" onclick="UserHealthyInformation()" />
+                                        </td>
+                                    }
+                                    else if (@Model.Relationship == "家屬")
+                                    {
+                                        <td class="warning">
+                                            <input class="float-right" type="button" value="家屬" onclick="reFamily()" />
+                                        </td>
+                                    }
+                                    else
+                                    {
+                                        <td class="warning">
+                                            <form action="AddFamilyApplication" method="post">
+                                                <input id="@Model.TargetNAME" name="TargetNAME" type="hidden" value="@Model.TargetNAME" />
+                                                <input class="float-right" type="submit" value="家屬申請" />
+                                            </form>
+                                        </td>
+                                    }
+                                </tr>
+                            </table>
+                        }
+                    }
+                </div>
+            </header>
+        </div>
+    </div>
+</section>

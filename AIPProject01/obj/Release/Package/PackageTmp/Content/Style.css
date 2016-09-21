@@ -1,0 +1,9 @@
+﻿.jumbotron {
+    margin: 0;
+    padding: 0;
+    background: url('../Images/201002262016401.jpg') center center fixed no-repeat;
+    -moz-background-size: cover;
+    background-size: cover;
+    min-height: 950px;
+    padding-top: 30px;
+}

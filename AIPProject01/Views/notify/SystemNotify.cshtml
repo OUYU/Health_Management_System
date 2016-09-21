@@ -1,0 +1,84 @@
+﻿@model AIPProject01.Models.ViewModel.SystemNotify
+@{
+    ViewBag.Title = "身心健康與安全管理系統";
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+        </div>
+    </section>
+}
+<section>
+    <div class="container">
+        <div style="overflow:auto; border: 2px #ccc solid; padding: 10px">
+            <section>
+                <header style="font-size:20px;">
+                    <b>通知</b>
+                </header>
+                @{
+                    if (@Model != null)
+                    {
+                        <h3>系統通知管理</h3>
+                        <table class="table">
+                            <tr>
+                                <th class="col-sm-1">編號</th>
+                                <th class="col-sm-1">發出者</th>
+                                <th class="col-sm-1">接收人</th>
+                                <th class="col-sm-1">通知時間</th>
+                                <th class="col-sm-1">狀態</th>
+                                <th class="col-sm-1">管理功能</th>
+                            </tr>
+                            @foreach (var item in Model.NotifyList)
+                            {
+                                <tr>
+                                    <td class="success">
+                                        @item.Id
+                                    </td>
+                                    <td class="active">
+                                        @item.User
+                                    </td>
+                                    <td class="info">
+                                        @item.Object
+                                    </td>
+                                    <td class="warning">
+                                        @item.MeasurementDate
+                                    </td>
+                                    @if (@item.status == 1)
+                                    {
+                                        <td class="active">
+                                            未處理
+                                        </td>
+                                    }
+                                    else
+                                    {
+                                        <td class="active">
+                                            已處理
+                                        </td>
+                                    }
+
+                                    <td class="success">
+                                        <a href="@Url.Action("Edit", "notify", new { Id = item.Id })" class="btn btn-primary" style="color:white;">
+                                            開始處理
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                        </table>
+                    }
+                    else
+                    {
+                        <h3>系統發生錯誤，請管理員盡速處理</h3>
+                    }
+                } 
+                <input type="button" value="已處理案件" onclick="SystemNotifyComplete()" />
+                <input type="button" value="返回" onclick="re()" />
+            </section>
+        </div>
+    </div>
+</section>
+
+

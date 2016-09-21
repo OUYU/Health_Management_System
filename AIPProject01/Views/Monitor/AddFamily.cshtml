@@ -1,0 +1,35 @@
+﻿@model AIPProject01.ViewModels.AddFamily
+@{
+    ViewBag.Title = "身心健康與安全管理系統";
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+        </div>
+    </section>
+}
+
+<section>
+    <div class="container">
+        <div style="overflow:auto; height: 650px; border: 2px #ccc solid; padding: 10px">
+            <header style="font-size:20px;">
+                <div>
+                    <form action="AddFamilyOutput" method="post">
+                        <p>
+                            <span>
+                                請輸入使用者名稱 :
+                            </span>
+                        </p>
+                        <input id="TargetNAME" name="TargetNAME" type="text" required />
+                        <input type="submit" value="搜尋" />
+                        <input type="button" value="返回" onclick="reFamily()" />
+                    </form>
+                </div>
+            </header>
+        </div>
+    </div>
+</section>

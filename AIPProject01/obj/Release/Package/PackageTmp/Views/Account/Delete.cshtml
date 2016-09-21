@@ -1,0 +1,57 @@
+﻿@model List<AIPProject01.Models.ViewModel.G3_User>
+
+@{
+    ViewBag.Title = "身心健康與安全管理系統";
+}
+
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+        </div>
+    </section>
+}
+
+<section>
+        <header style="font-size:20px;">
+            <b>註冊名單</b>
+        </header>
+        <table class="table">
+            <tr>
+                <th class="col-sm-1">ID</th>
+                <th class="col-sm-1">帳號</th>
+                <th class="col-sm-1">密碼</th>
+                <th class="col-sm-1">性別</th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="active">
+                        @item.ID
+                    </td>
+                    <td class="info">
+                        @item.NAME
+                    </td>
+                    <td class="warning">
+                        @item.PASSWORD
+                    </td>
+                    <td class="success">
+                        @item.SEX
+                    </td>
+                </tr>
+            }
+        </table>
+</section>
+
+    <form action="DeleteOutput" method="post" class="form-horizontal">
+        <label class="col-sm-2 control-label">欲刪除的使用者ID : </label>
+            <div class="col-sm-3">
+                <input id="ID" name="ID" type="text" class="form-control" placeholder="使用者ID" pattern="[0-9]*" required />
+            </div>
+                <button type="submit" class="btn btn-primary">提交</button>
+                <button type="reset" class="btn btn-primary">重新填寫</button>
+    </form>

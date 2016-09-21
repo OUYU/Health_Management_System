@@ -1,0 +1,34 @@
+﻿@model AIPProject.ViewModels.BloodGlucoseIn
+
+@{
+    ViewBag.Title = "血糖量測";
+}
+
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+        </div>
+    </section>
+}
+
+    <form action="BloodGlucoseBEOutput" method="post">
+
+        <p>
+            <h2>
+            血糖值 : @Html.TextBoxFor(model => model.GLU_AC) mg/dl
+            </h2>
+        </p>
+        <input type="submit" />
+    </form>
+
+
+<p>
+    <div>
+        <a href="/measure/BloodGlucose">返回血糖量測選單</a>
+        <a href="/measure/Index">返回主選單</a>
+    </div>
+</p>

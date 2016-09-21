@@ -1,0 +1,445 @@
+﻿@model AIPProject01.Models.ViewModel.SystemNutrition
+@{
+    ViewBag.Title = "身心健康與安全管理系統";
+}
+
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+            @*<p>
+                    To learn more about ASP.NET MVC visit
+                    <a href="http://asp.net/mvc" title="ASP.NET MVC Website">http://asp.net/mvc</a>.
+                    The page features <mark>videos, tutorials, and samples</mark> to help you get the most from ASP.NET MVC.
+                    If you have any questions about ASP.NET MVC visit
+                    <a href="http://forums.asp.net/1146.aspx/1?MVC" title="ASP.NET MVC Forum">our forums</a>.
+                </p>*@
+            <p>
+            </p>
+        </div>
+    </section>
+}
+
+<section>
+    <div class="container">
+        <div style="overflow:auto; border: 2px #ccc solid; padding: 10px">
+            <section>
+                <header style="font-size:30px;">
+                    <b>@Model.UserName 的健康資訊</b>
+                </header>
+                <p><b style="font-size:25px;">血氧</b></p>
+                @{
+                    if (@Model.UserHealthy.HealthyInformation.ABG.Status == null)
+                    {
+                        <span class="label" style="color:black;font-size:20px;">沒有量測資料</span>
+                    }
+                    else
+                    {
+                        <table class="table" style="font-size:20px;">
+                            <tr>
+                                <th class="col-sm-1">血氧濃度</th>
+                                <th class="col-sm-1">量測時間</th>
+                                <th class="col-sm-1">狀態</th>
+                            </tr>
+                            <tr>
+                                <td class="active">
+                                    @Model.UserHealthy.HealthyInformation.ABG.SpO2
+                                </td>
+                                <td class="info">
+                                    @Model.UserHealthy.HealthyInformation.ABG.MeasurementDate
+                                </td>
+                                <td class="warning">
+                                    @Model.UserHealthy.HealthyInformation.ABG.Status
+                                </td>
+                            </tr>
+                        </table>
+                    }
+                }
+                <p>
+                <p><b style="font-size:25px;">血壓</b></p>
+                @{
+                    if (@Model.UserHealthy.HealthyInformation.BloodPressure.Status == null)
+                    {
+                        <span class="label" style="color:black;font-size:20px;">沒有量測資料</span>
+                    }
+                    else
+                    {
+                        <table class="table" style="font-size:20px;">
+                            <tr>
+                                <th class="col-sm-1">收縮壓/舒張壓</th>
+                                <th class="col-sm-1">量測時間</th>
+                                <th class="col-sm-1">狀態</th>
+                            </tr>
+                            <tr>
+                                <td class="active">
+                                    @Model.UserHealthy.HealthyInformation.BloodPressure.SBP / @Model.UserHealthy.HealthyInformation.BloodPressure.DBP
+                                </td>
+                                <td class="info">
+                                    @Model.UserHealthy.HealthyInformation.BloodPressure.MeasurementDate
+                                </td>
+                                <td class="warning">
+                                    @Model.UserHealthy.HealthyInformation.BloodPressure.Status
+                                </td>
+                            </tr>
+                        </table>
+                    }
+                }
+                <p>
+                <p><b style="font-size:25px;">血糖</b></p>
+                @{
+                    if (@Model.UserHealthy.HealthyInformation.BloodGlucose.Status == null)
+                    {
+                        <span class="label" style="color:black;font-size:20px;">沒有量測資料</span>
+                    }
+                    else
+                    {
+                        <table class="table" style="font-size:20px;">
+                            <tr>
+                                <th class="col-sm-1">血糖濃度</th>
+                                <th class="col-sm-1">量測時間</th>
+                                <th class="col-sm-1">狀態</th>
+                            </tr>
+                            <tr>
+                                <td class="active">
+                                    @Model.UserHealthy.HealthyInformation.BloodGlucose.GLU_AC
+                                </td>
+                                <td class="info">
+                                    @Model.UserHealthy.HealthyInformation.BloodGlucose.MeasurementDate
+                                </td>
+                                <td class="warning">
+                                    @Model.UserHealthy.HealthyInformation.BloodGlucose.Status
+                                </td>
+                            </tr>
+                        </table>
+                    }
+                }
+                <p>
+                <p><b style="font-size:25px;">BMI</b></p>
+                @{
+                    if (@Model.UserHealthy.HealthyInformation.BMI.Status == null)
+                    {
+                        <span class="label" style="color:black;font-size:20px;">沒有量測資料</span>
+                    }
+                    else
+                    {
+                        <table class="table" style="font-size:20px;">
+                            <tr>
+                                <th class="col-sm-1">BMI</th>
+                                <th class="col-sm-1">量測時間</th>
+                                <th class="col-sm-1">狀態</th>
+                            </tr>
+                            <tr>
+                                <td class="active">
+                                    @Model.UserHealthy.HealthyInformation.BMI.BMI
+                                </td>
+                                <td class="info">
+                                    @Model.UserHealthy.HealthyInformation.BMI.MeasurementDate
+                                </td>
+                                <td class="warning">
+                                    @Model.UserHealthy.HealthyInformation.BMI.Status
+                                </td>
+                            </tr>
+                        </table>
+                    }
+                }
+                <p>
+                <p><b style="font-size:25px;">呼吸</b></p>
+                @{
+                    if (@Model.UserHealthy.HealthyInformation.Air.Status == null)
+                    {
+                        <span class="label" style="color:black;font-size:20px;">沒有量測資料</span>
+                    }
+                    else
+                    {
+                        <table class="table" style="font-size:20px;">
+                            <tr>
+                                <th class="col-sm-1">呼吸強度</th>
+                                <th class="col-sm-1">量測時間</th>
+                                <th class="col-sm-1">狀態</th>
+                            </tr>
+                            <tr>
+                                <td class="active">
+                                    @Model.UserHealthy.HealthyInformation.Air.Air
+                                </td>
+                                <td class="info">
+                                    @Model.UserHealthy.HealthyInformation.Air.MeasurementDate
+                                </td>
+                                <td class="warning">
+                                    @Model.UserHealthy.HealthyInformation.Air.Status
+                                </td>
+                            </tr>
+                        </table>
+                    }
+                }
+                <p>
+                <p><b style="font-size:25px;">膚電反應</b></p>
+                @{
+                    if (@Model.UserHealthy.HealthyInformation.GSR.Status == null)
+                    {
+                        <span class="label" style="color:black;font-size:20px;">沒有量測資料</span>
+                    }
+                    else
+                    {
+                        <table class="table" style="font-size:20px;">
+                            <tr>
+                                <th class="col-sm-1">皮膚導電值</th>
+                                <th class="col-sm-1">皮膚電阻值</th>
+                                <th class="col-sm-1">皮膚導電值電壓</th>
+                                <th class="col-sm-1">量測時間</th>
+                                <th class="col-sm-1">狀態</th>
+                            </tr>
+                            <tr>
+                                <td class="active">
+                                    @Model.UserHealthy.HealthyInformation.GSR.SkinConductance
+                                </td>
+                                <td class="info">
+                                    @Model.UserHealthy.HealthyInformation.GSR.SkinResistance
+                                </td>
+                                <td class="warning">
+                                    @Model.UserHealthy.HealthyInformation.GSR.SkinConductanceVoltage
+                                </td>
+                                <td class="active">
+                                    @Model.UserHealthy.HealthyInformation.GSR.MeasurementDate
+                                </td>
+                                <td class="info">
+                                    @Model.UserHealthy.HealthyInformation.GSR.Status
+                                </td>
+                            </tr>
+                        </table>
+                    }
+                }
+                <p>
+                <p><b style="font-size:25px;">運動</b></p>
+                @{
+                    if (@Model.UserHealthy.HealthyInformation.GyroValues.Status == null)
+                    {
+                        <span class="label" style="color:black;font-size:20px;">沒有量測資料</span>
+                    }
+                    else
+                    {
+                        <table class="table" style="font-size:20px;">
+                            <tr>
+                                <th class="col-sm-1">X軸變量</th>
+                                <th class="col-sm-1">Y軸變量</th>
+                                <th class="col-sm-1">Z軸變量</th>
+                                <th class="col-sm-1">量測時間</th>
+                                <th class="col-sm-1">狀態</th>
+                            </tr>
+                            <tr>
+                                <td class="active">
+                                    @Model.UserHealthy.HealthyInformation.GyroValues.RawX
+                                </td>
+                                <td class="info">
+                                    @Model.UserHealthy.HealthyInformation.GyroValues.RawY
+                                </td>
+                                <td class="warning">
+                                    @Model.UserHealthy.HealthyInformation.GyroValues.RawZ
+                                </td>
+                                <td class="active">
+                                    @Model.UserHealthy.HealthyInformation.GyroValues.MeasurementDate
+                                </td>
+                                <td class="info">
+                                    @Model.UserHealthy.HealthyInformation.GyroValues.Status
+                                </td>
+                            </tr>
+                        </table>
+                    }
+                }
+                <p>
+                <p><b style="font-size:25px;">脈搏</b></p>
+                @{
+                    if (@Model.UserHealthy.HealthyInformation.GyroValues.Status == null)
+                    {
+                        <span class="label" style="color:black;font-size:20px;">沒有量測資料</span>
+                    }
+                    else
+                    {
+                        <table class="table" style="font-size:20px;">
+                            <tr>
+                                <th class="col-sm-1">脈搏</th>
+                                <th class="col-sm-1">量測時間</th>
+                                <th class="col-sm-1">狀態</th>
+                            </tr>
+                            <tr>
+                                <td class="active">
+                                    @Model.UserHealthy.HealthyInformation.Pulse.Pulse
+                                </td>
+                                <td class="info">
+                                    @Model.UserHealthy.HealthyInformation.Pulse.MeasurementDate
+                                </td>
+                                <td class="warning">
+                                    @Model.UserHealthy.HealthyInformation.Pulse.Status
+                                </td>
+                            </tr>
+                        </table>
+                    }
+                }
+                <p>
+                <p><b style="font-size:25px;">體溫</b></p>
+                @{
+                    if (@Model.UserHealthy.HealthyInformation.GyroValues.Status == null)
+                    {
+                        <span class="label" style="color:black;font-size:20px;">沒有量測資料</span>
+                    }
+                    else
+                    {
+                        <table class="table" style="font-size:20px;">
+                            <tr>
+                                <th class="col-sm-1">溫度</th>
+                                <th class="col-sm-1">量測時間</th>
+                                <th class="col-sm-1">狀態</th>
+                            </tr>
+                            <tr>
+                                <td class="active">
+                                    @Model.UserHealthy.HealthyInformation.Temperature.Temperature
+                                </td>
+                                <td class="info">
+                                    @Model.UserHealthy.HealthyInformation.Temperature.MeasurementDate
+                                </td>
+                                <td class="warning">
+                                    @Model.UserHealthy.HealthyInformation.Temperature.Status
+                                </td>
+                            </tr>
+                        </table>
+                    }
+                }
+            </section>
+            <section>
+                @{
+                    <header style="font-size:20px;">
+                        <b>我的健康評分</b>
+                    </header>
+                    if (@Model.UserHealthy.HealthyInformation.ABG.Status == null &&
+                        @Model.UserHealthy.HealthyInformation.BloodGlucose.Status == null &&
+                        @Model.UserHealthy.HealthyInformation.BloodPressure.Status == null &&
+                        @Model.UserHealthy.HealthyInformation.BMI.Status == null &&
+                        @Model.UserHealthy.HealthyInformation.Air.Status == null &&
+                        @Model.UserHealthy.HealthyInformation.GSR.Status == null &&
+                        @Model.UserHealthy.HealthyInformation.GyroValues.Status == null &&
+                        @Model.UserHealthy.HealthyInformation.Pulse.Status == null &&
+                        @Model.UserHealthy.HealthyInformation.Temperature.Status == null)
+                    {
+                        <span class="label" style="color:black;font-size:20px;">沒有量測資料，無法正確評分</span>
+                    }
+
+                    else
+                    {
+                        if (@Model.UserHealthy.Total == 0)
+                        {
+                            <table class="table" style="font-size:20px;">
+                                <tr>
+                                    <th class="col-sm-1">健康等級</th>
+                                    <th class="col-sm-1">健康建議</th>
+                                </tr>
+                                <tr>
+                                    <td class="active">
+                                        <center style="font-size:50px">A</center>
+                                    </td>
+                                    <td class="info">
+                                        <center style="font-size:25px; margin-top:15px">非常健康，請好好保持</center>
+                                    </td>
+                                </tr>
+                            </table>
+                        }
+                        else if (@Model.UserHealthy.Total > 0 && @Model.UserHealthy.Total <= 4)
+                        {
+                            <table class="table" style="font-size:20px;">
+                                <tr>
+                                    <th class="col-sm-1">健康等級</th>
+                                    <th class="col-sm-1">健康建議</th>
+                                </tr>
+                                <tr>
+                                    <td class="active">
+                                        <center>B</center>
+                                    </td>
+                                    <td class="info">
+                                        <center>有些數值偏高，請多加注意</center>
+                                    </td>
+                                </tr>
+                            </table>
+                        }
+                        else if (@Model.UserHealthy.Total >= 5 && @Model.UserHealthy.Total < 9)
+                        {
+                            <table class="table" style="font-size:20px;">
+                                <tr>
+                                    <th class="col-sm-1">健康等級</th>
+                                    <th class="col-sm-1">健康建議</th>
+                                </tr>
+                                <tr>
+                                    <td class="active">
+                                        <center>C</center>
+                                    </td>
+                                    <td class="info">
+                                        <center>身體狀況不佳，建議前往醫院進行檢查</center>
+                                    </td>
+                                </tr>
+                            </table>
+                        }
+                        else
+                        {
+                            <table class="table" style="font-size:20px;">
+                                <tr>
+                                    <th class="col-sm-1">健康等級</th>
+                                    <th class="col-sm-1">健康建議</th>
+                                </tr>
+                                <tr>
+                                    <td class="active" style="">
+                                        <center>D</center>
+                                    </td>
+                                    <td class="info">
+                                        <center>身體機能嚴重失常，建議前往醫院進行專業療養</center>
+                                    </td>
+                                </tr>
+                            </table>
+                        }
+
+                    }
+                }
+            </section>
+        </div>
+    </div>
+</section>
+
+
+<section>
+    <div class="container">
+        <div style="overflow:auto; height: 650px; border: 2px #ccc solid; padding: 10px">
+            <header style="font-size:20px;">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true)
+                    <fieldset>
+                        @Html.HiddenFor(model => model.Nutrition.UserId)
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.Nutrition.Title, "建議標題")
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.Nutrition.Title)
+                            @Html.ValidationMessageFor(model => model.Nutrition.Title)
+                        </div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.Nutrition.Content, "建議內容")
+                        </div>
+                        @Html.TextAreaFor(model => model.Nutrition.Content)
+
+                        <p>
+                            <button type="submit" class="btn btn-primary">送出</button>
+                            <a href="@Url.Action("View", "Nutrition", new { id = Model.Nutrition.UserId })" class="btn btn-primary" style="color:white;">
+                                返回
+                            </a>
+                        </p>
+
+                    </fieldset>
+                }
+            </header>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

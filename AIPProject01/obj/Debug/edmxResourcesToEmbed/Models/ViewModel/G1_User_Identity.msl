@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AIPModel13StoreContainer" CdmEntityContainer="AIPEntities21">
+    <EntitySetMapping Name="G1_User_Identity">
+      <EntityTypeMapping TypeName="AIPModel13.G1_User_Identity">
+        <MappingFragment StoreEntitySet="G1_User_Identity">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AIPModel7StoreContainer" CdmEntityContainer="AIPEntities13">
+    <EntitySetMapping Name="G3_Monitor_FamilyApplication">
+      <EntityTypeMapping TypeName="AIPModel7.G3_Monitor_FamilyApplication">
+        <MappingFragment StoreEntitySet="G3_Monitor_FamilyApplication">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="User" ColumnName="User" />
+          <ScalarProperty Name="Family" ColumnName="Family" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

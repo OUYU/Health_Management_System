@@ -1,0 +1,40 @@
+﻿@model AIPProject01.Models.ViewModel.G3_User
+
+@{
+    ViewBag.Title = "身心健康與安全管理系統";
+}
+
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+        </div>
+    </section>
+}
+
+@using (Html.BeginForm())
+{
+    <fieldset>
+        帳號: 
+        <br />
+            <input id="name" name="name" type="text" pattern="[A-Za-z0-9]*" required />
+        <br />
+        密碼: 
+        <br />
+            <input id="password" name="password" type="text" pattern="[A-Za-z0-9]*" required />
+        <br />
+        <p>
+            <input name="RememberMe" id="RememberMe" type="checkbox" data-val-required="記住我? 欄位是必要項。" 
+                   data-val="true" value="true">
+            <input name="RememberMe" type="hidden" value="false">
+            <label class="checkbox" for="RememberMe">記住我?</label>
+        </p>
+        <button type="submit">登入</button>
+        <br />
+            @Html.ActionLink("註冊", "Register", "Account") 沒有帳號?
+
+</fieldset>
+}

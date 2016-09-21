@@ -1,0 +1,41 @@
+﻿@model AIPProject01.Models.ViewModel.G1_User_Identity
+
+@{
+    ViewBag.Title = "身心健康與安全管理系統";
+}
+
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+        </div>
+    </section>
+}
+
+<section>
+    <div class="container">
+        <div style="overflow:auto; border: 2px #ccc solid; padding: 10px">
+            <div>
+                @{
+                    if (@Model.UserType == 4)
+                    {
+                        <p><span class="label" style='color:black'>@User.Identity.Name</span></p>
+                        <p><span class="label" style='color:black'>身分 : @Model.TypeName</span></p>
+                        <p><span class="label" style='color:black'>身分編號 : @Model.UserType</span></p>
+                    }
+                    else
+                    {
+                        <p><span class="label" style="color:black;">您目前還不是志工</span></p>
+                        <div>
+                            <input class="float_right" type="button" value="加入志工" style="font-size:20px; width:30%; margin-left:70%" onclick="AddVolunteers()" />
+                        </div>
+                    }
+
+                }
+            </div>
+        </div>
+    </div>
+</section>

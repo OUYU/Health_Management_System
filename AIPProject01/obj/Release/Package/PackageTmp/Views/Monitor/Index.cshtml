@@ -1,0 +1,41 @@
+﻿@model List<AIPProject01.Models.ViewModel.G3_User>
+@{
+    ViewBag.Title = "身心健康與安全管理系統";
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+        </div>
+    </section>
+}
+
+<div class="container">
+    <div style="overflow:scroll; height: 480px;  border: 2px #ccc solid; padding: 10px">
+    @foreach (var item in Model)
+    {
+        <div class="media" style="  height:180px; width:200px; border-style:solid; border-width:3px; border-color:black; padding: 10px;">
+            <div class="media-left" style="box-sizing:border-box; width:90px; height:90px; background-color:red">
+                <b class="float-right">
+                    Photo
+                </b>
+            </div>
+            <div class="media-body" style="box-sizing:border-box; padding: 10px; width:100px;">
+                name:<span>@item.NAME</span>
+                <form action="HealthyInformation" method="post">
+                    <input id="@item.NAME" type="hidden" name="Name" value="@item.NAME" />
+
+                    <input class="float-right" type="button" value="刪除" style="font-size:20px;" />
+                    <input class="float-right" type="submit" value="健康狀況" style="font-size:20px;" />
+                    <input class="float-right" type="button" value="基本資料" style="font-size:20px;" />
+                </form>
+            </div>
+        </div>
+    }
+</div>
+</div>
+
+

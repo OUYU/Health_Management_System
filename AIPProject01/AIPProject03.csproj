@@ -1,0 +1,1484 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{04224735-1091-41A2-874F-1B52D0BD8C15}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AIPProject01</RootNamespace>
+    <AssemblyName>AIPProject01</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>App_Data\XmlDocument.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.30506.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.30506.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.30506.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.30506.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.30506.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.2.0.30506.0\lib\net40\WebMatrix.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebPages.OAuth, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.OAuth.2.0.30506.0\lib\net40\Microsoft.Web.WebPages.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.WebData.2.0.30506.0\lib\net40\WebMatrix.WebData.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.AspNet, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.AspNet.4.1.4.12333\lib\net45-full\DotNetOpenAuth.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.Core.4.1.4.12333\lib\net45-full\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.Consumer, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Consumer.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OAuth.Consumer.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Core.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.Core.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.OData, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.OData.4.0.30506\lib\net40\System.Web.Http.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Edm, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Data.Edm.5.2.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Data.OData.5.2.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Spatial, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\System.Spatial.5.2.0\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AIPModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AIPModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AIPModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AIPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AIPModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AIPModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\AuthConfig.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\HealthEducationController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\IntroductionController.cs" />
+    <Compile Include="Controllers\KnowledgeController.cs" />
+    <Compile Include="Controllers\MeasureAPIController.cs" />
+    <Compile Include="Controllers\measureController.cs" />
+    <Compile Include="Controllers\MonitorController.cs" />
+    <Compile Include="Controllers\notifyController.cs" />
+    <Compile Include="Controllers\NutritionController.cs" />
+    <Compile Include="Controllers\PartnerController.cs" />
+    <Compile Include="Controllers\PartnersController.cs" />
+    <Compile Include="Controllers\sponsorController.cs" />
+    <Compile Include="Controllers\SystemAdministratorController.cs" />
+    <Compile Include="G1_User.cs">
+      <DependentUpon>AIPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\DonutDataModel.cs" />
+    <Compile Include="Models\ViewModel\G3_Nutrition_Nutrition.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G3_Nutrition_Nutrition.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_Nutrition_Nutrition.cs">
+      <DependentUpon>G3_Nutrition_Nutrition.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_Nutrition_Nutrition.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G3_Nutrition_Nutrition.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_Nutrition_Nutrition1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G3_Nutrition_Nutrition.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\SystemNutrition.cs" />
+    <Compile Include="Models\ViewModel\G3_Monitor_Notice.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G3_Monitor_Notice.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_Monitor_Notice.cs">
+      <DependentUpon>G3_Monitor_Notice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_Monitor_Notice.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G3_Monitor_Notice.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_Monitor_Notice1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G3_Monitor_Notice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\Notice.cs" />
+    <Compile Include="Models\ViewModel\ABG.cs" />
+    <Compile Include="Models\ViewModel\Add.cs" />
+    <Compile Include="Models\ViewModel\BloodGlucose.cs" />
+    <Compile Include="Models\ViewModel\BloodPressure.cs" />
+    <Compile Include="Models\ViewModel\BMI.cs" />
+    <Compile Include="Models\ViewModel\Breath.cs" />
+    <Compile Include="Models\ViewModel\G1_User_Account.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G1_User_Account.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G1_User_Account.cs">
+      <DependentUpon>G1_User_Account.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G1_User_Account.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G1_User_Account.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G1_User_Account1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G1_User_Account.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G1_User_FamilyMember.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G1_User_FamilyMember.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G1_User_FamilyMember.cs">
+      <DependentUpon>G1_User_FamilyMember.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G1_User_FamilyMember.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G1_User_FamilyMember.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G1_User_FamilyMember1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G1_User_FamilyMember.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G1_User_Identity.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G1_User_Identity.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G1_User_Identity.cs">
+      <DependentUpon>G1_User_Identity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G1_User_Identity.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G1_User_Identity.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G1_User_Identity1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G1_User_Identity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_HealthEducation.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G3_HealthEducation.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_HealthEducation.cs">
+      <DependentUpon>G3_HealthEducation.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_HealthEducation.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G3_HealthEducation.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_HealthEducation1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G3_HealthEducation.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_Measure_Air.cs">
+      <DependentUpon>G3_Measure_Breath.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_Measure_Breath.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G3_Measure_Breath.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_Measure_Breath.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G3_Measure_Breath.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_Measure_Air.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G3_Measure_Air.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_Measure_GSR.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G3_Measure_GSR.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_Measure_GSR.cs">
+      <DependentUpon>G3_Measure_GSR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_Measure_GSR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G3_Measure_GSR.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_Measure_GSR1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G3_Measure_GSR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_Measure_GyroValues.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G3_Measure_GyroValues.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_Measure_GyroValues.cs">
+      <DependentUpon>G3_Measure_GyroValues.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_Measure_GyroValues.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G3_Measure_GyroValues.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_Measure_GyroValues1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G3_Measure_GyroValues.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_Measure_Pulse.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G3_Measure_Pulse.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_Measure_Pulse.cs">
+      <DependentUpon>G3_Measure_Pulse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_Measure_Pulse.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G3_Measure_Pulse.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_Measure_Pulse1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G3_Measure_Pulse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_Measure_Temperature.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G3_Measure_Temperature.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_Measure_Temperature.cs">
+      <DependentUpon>G3_Measure_Temperature.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_Measure_Temperature.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G3_Measure_Temperature.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_Measure_Temperature1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G3_Measure_Temperature.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_Monitor_FamilyApplication.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G3_Monitor_FamilyApplication.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_Monitor_FamilyApplication.cs">
+      <DependentUpon>G3_Monitor_FamilyApplication.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_Monitor_FamilyApplication.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G3_Monitor_FamilyApplication.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_Monitor_FamilyApplication1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G3_Monitor_FamilyApplication.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_Monitor_FriendApplication.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G3_Monitor_FriendApplication.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_Monitor_FriendApplication.cs">
+      <DependentUpon>G3_Monitor_FriendApplication.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_Monitor_FriendApplication.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G3_Monitor_FriendApplication.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_Monitor_FriendApplication1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G3_Monitor_FriendApplication.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_Monitor_Friends.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G3_Monitor_Friends.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_Monitor_Friends.cs">
+      <DependentUpon>G3_Monitor_Friends.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_Monitor_Friends.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G3_Monitor_Friends.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_Monitor_Friends1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G3_Monitor_Friends.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_SystemAdministrator_HealthLink.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G3_SystemAdministrator_HealthLink.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_SystemAdministrator_HealthLink.cs">
+      <DependentUpon>G3_SystemAdministrator_HealthLink.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_SystemAdministrator_HealthLink.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G3_SystemAdministrator_HealthLink.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_SystemAdministrator_HealthLink1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G3_SystemAdministrator_HealthLink.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\GSR.cs" />
+    <Compile Include="Models\ViewModel\GyroValues.cs" />
+    <Compile Include="Models\ViewModel\HealthyScore.cs" />
+    <Compile Include="Models\ViewModel\LoingViewModel.cs" />
+    <Compile Include="Models\ViewModel\MonitorTarget.cs" />
+    <Compile Include="Models\ViewModel\G1User.cs" />
+    <Compile Include="Models\ViewModel\G3_Measure_ABG.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G3_Measure_ABG.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_Measure_ABG.cs">
+      <DependentUpon>G3_Measure_ABG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_Measure_ABG.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G3_Measure_ABG.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_Measure_ABG1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G3_Measure_ABG.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_Measure_BloodGlucose.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G3_Measure_BloodGlucose.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_Measure_BloodGlucose.cs">
+      <DependentUpon>G3_Measure_BloodGlucose.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_Measure_BloodGlucose.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G3_Measure_BloodGlucose.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_Measure_BloodGlucose1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G3_Measure_BloodGlucose.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_Measure_BloodPressure.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G3_Measure_BloodPressure.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_Measure_BloodPressure.cs">
+      <DependentUpon>G3_Measure_BloodPressure.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_Measure_BloodPressure.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G3_Measure_BloodPressure.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_Measure_BloodPressure1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G3_Measure_BloodPressure.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_Measure_BMI.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G3_Measure_BMI.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_Measure_BMI.cs">
+      <DependentUpon>G3_Measure_BMI.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_Measure_BMI.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G3_Measure_BMI.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_Measure_BMI1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G3_Measure_BMI.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_Monitor_Family.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G3_Monitor_Family.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_Monitor_Family.cs">
+      <DependentUpon>G3_Monitor_Family.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_Monitor_Family.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G3_Monitor_Family.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_Monitor_Family1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G3_Monitor_Family.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_User.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G3_User.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_User.cs">
+      <DependentUpon>G3_User.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_User.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G3_User.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\G3_User1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G3_User.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\Pulse.cs" />
+    <Compile Include="Models\ViewModel\SystemNotify.cs" />
+    <Compile Include="Models\ViewModel\Temperature.cs" />
+    <Compile Include="Models\ViewModel\UserHealthyInformation.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\ajax-loader.gif" />
+    <Content Include="Content\images\icons-png\action-black.png" />
+    <Content Include="Content\images\icons-png\action-white.png" />
+    <Content Include="Content\images\icons-png\alert-black.png" />
+    <Content Include="Content\images\icons-png\alert-white.png" />
+    <Content Include="Content\images\icons-png\arrow-d-black.png" />
+    <Content Include="Content\images\icons-png\arrow-d-l-black.png" />
+    <Content Include="Content\images\icons-png\arrow-d-l-white.png" />
+    <Content Include="Content\images\icons-png\arrow-d-r-black.png" />
+    <Content Include="Content\images\icons-png\arrow-d-r-white.png" />
+    <Content Include="Content\images\icons-png\arrow-d-white.png" />
+    <Content Include="Content\images\icons-png\arrow-l-black.png" />
+    <Content Include="Content\images\icons-png\arrow-l-white.png" />
+    <Content Include="Content\images\icons-png\arrow-r-black.png" />
+    <Content Include="Content\images\icons-png\arrow-r-white.png" />
+    <Content Include="Content\images\icons-png\arrow-u-black.png" />
+    <Content Include="Content\images\icons-png\arrow-u-l-black.png" />
+    <Content Include="Content\images\icons-png\arrow-u-l-white.png" />
+    <Content Include="Content\images\icons-png\arrow-u-r-black.png" />
+    <Content Include="Content\images\icons-png\arrow-u-r-white.png" />
+    <Content Include="Content\images\icons-png\arrow-u-white.png" />
+    <Content Include="Content\images\icons-png\audio-black.png" />
+    <Content Include="Content\images\icons-png\audio-white.png" />
+    <Content Include="Content\images\icons-png\back-black.png" />
+    <Content Include="Content\images\icons-png\back-white.png" />
+    <Content Include="Content\images\icons-png\bars-black.png" />
+    <Content Include="Content\images\icons-png\bars-white.png" />
+    <Content Include="Content\images\icons-png\bullets-black.png" />
+    <Content Include="Content\images\icons-png\bullets-white.png" />
+    <Content Include="Content\images\icons-png\calendar-black.png" />
+    <Content Include="Content\images\icons-png\calendar-white.png" />
+    <Content Include="Content\images\icons-png\camera-black.png" />
+    <Content Include="Content\images\icons-png\camera-white.png" />
+    <Content Include="Content\images\icons-png\carat-d-black.png" />
+    <Content Include="Content\images\icons-png\carat-d-white.png" />
+    <Content Include="Content\images\icons-png\carat-l-black.png" />
+    <Content Include="Content\images\icons-png\carat-l-white.png" />
+    <Content Include="Content\images\icons-png\carat-r-black.png" />
+    <Content Include="Content\images\icons-png\carat-r-white.png" />
+    <Content Include="Content\images\icons-png\carat-u-black.png" />
+    <Content Include="Content\images\icons-png\carat-u-white.png" />
+    <Content Include="Content\images\icons-png\check-black.png" />
+    <Content Include="Content\images\icons-png\check-white.png" />
+    <Content Include="Content\images\icons-png\clock-black.png" />
+    <Content Include="Content\images\icons-png\clock-white.png" />
+    <Content Include="Content\images\icons-png\cloud-black.png" />
+    <Content Include="Content\images\icons-png\cloud-white.png" />
+    <Content Include="Content\images\icons-png\comment-black.png" />
+    <Content Include="Content\images\icons-png\comment-white.png" />
+    <Content Include="Content\images\icons-png\delete-black.png" />
+    <Content Include="Content\images\icons-png\delete-white.png" />
+    <Content Include="Content\images\icons-png\edit-black.png" />
+    <Content Include="Content\images\icons-png\edit-white.png" />
+    <Content Include="Content\images\icons-png\eye-black.png" />
+    <Content Include="Content\images\icons-png\eye-white.png" />
+    <Content Include="Content\images\icons-png\forbidden-black.png" />
+    <Content Include="Content\images\icons-png\forbidden-white.png" />
+    <Content Include="Content\images\icons-png\forward-black.png" />
+    <Content Include="Content\images\icons-png\forward-white.png" />
+    <Content Include="Content\images\icons-png\gear-black.png" />
+    <Content Include="Content\images\icons-png\gear-white.png" />
+    <Content Include="Content\images\icons-png\grid-black.png" />
+    <Content Include="Content\images\icons-png\grid-white.png" />
+    <Content Include="Content\images\icons-png\heart-black.png" />
+    <Content Include="Content\images\icons-png\heart-white.png" />
+    <Content Include="Content\images\icons-png\home-black.png" />
+    <Content Include="Content\images\icons-png\home-white.png" />
+    <Content Include="Content\images\icons-png\info-black.png" />
+    <Content Include="Content\images\icons-png\info-white.png" />
+    <Content Include="Content\images\icons-png\location-black.png" />
+    <Content Include="Content\images\icons-png\location-white.png" />
+    <Content Include="Content\images\icons-png\lock-black.png" />
+    <Content Include="Content\images\icons-png\lock-white.png" />
+    <Content Include="Content\images\icons-png\mail-black.png" />
+    <Content Include="Content\images\icons-png\mail-white.png" />
+    <Content Include="Content\images\icons-png\minus-black.png" />
+    <Content Include="Content\images\icons-png\minus-white.png" />
+    <Content Include="Content\images\icons-png\navigation-black.png" />
+    <Content Include="Content\images\icons-png\navigation-white.png" />
+    <Content Include="Content\images\icons-png\phone-black.png" />
+    <Content Include="Content\images\icons-png\phone-white.png" />
+    <Content Include="Content\images\icons-png\plus-black.png" />
+    <Content Include="Content\images\icons-png\plus-white.png" />
+    <Content Include="Content\images\icons-png\power-black.png" />
+    <Content Include="Content\images\icons-png\power-white.png" />
+    <Content Include="Content\images\icons-png\recycle-black.png" />
+    <Content Include="Content\images\icons-png\recycle-white.png" />
+    <Content Include="Content\images\icons-png\refresh-black.png" />
+    <Content Include="Content\images\icons-png\refresh-white.png" />
+    <Content Include="Content\images\icons-png\search-black.png" />
+    <Content Include="Content\images\icons-png\search-white.png" />
+    <Content Include="Content\images\icons-png\shop-black.png" />
+    <Content Include="Content\images\icons-png\shop-white.png" />
+    <Content Include="Content\images\icons-png\star-black.png" />
+    <Content Include="Content\images\icons-png\star-white.png" />
+    <Content Include="Content\images\icons-png\tag-black.png" />
+    <Content Include="Content\images\icons-png\tag-white.png" />
+    <Content Include="Content\images\icons-png\user-black.png" />
+    <Content Include="Content\images\icons-png\user-white.png" />
+    <Content Include="Content\images\icons-png\video-black.png" />
+    <Content Include="Content\images\icons-png\video-white.png" />
+    <Content Include="Content\images\icons-svg\action-black.svg" />
+    <Content Include="Content\images\icons-svg\action-white.svg" />
+    <Content Include="Content\images\icons-svg\alert-black.svg" />
+    <Content Include="Content\images\icons-svg\alert-white.svg" />
+    <Content Include="Content\images\icons-svg\arrow-d-black.svg" />
+    <Content Include="Content\images\icons-svg\arrow-d-l-black.svg" />
+    <Content Include="Content\images\icons-svg\arrow-d-l-white.svg" />
+    <Content Include="Content\images\icons-svg\arrow-d-r-black.svg" />
+    <Content Include="Content\images\icons-svg\arrow-d-r-white.svg" />
+    <Content Include="Content\images\icons-svg\arrow-d-white.svg" />
+    <Content Include="Content\images\icons-svg\arrow-l-black.svg" />
+    <Content Include="Content\images\icons-svg\arrow-l-white.svg" />
+    <Content Include="Content\images\icons-svg\arrow-r-black.svg" />
+    <Content Include="Content\images\icons-svg\arrow-r-white.svg" />
+    <Content Include="Content\images\icons-svg\arrow-u-black.svg" />
+    <Content Include="Content\images\icons-svg\arrow-u-l-black.svg" />
+    <Content Include="Content\images\icons-svg\arrow-u-l-white.svg" />
+    <Content Include="Content\images\icons-svg\arrow-u-r-black.svg" />
+    <Content Include="Content\images\icons-svg\arrow-u-r-white.svg" />
+    <Content Include="Content\images\icons-svg\arrow-u-white.svg" />
+    <Content Include="Content\images\icons-svg\audio-black.svg" />
+    <Content Include="Content\images\icons-svg\audio-white.svg" />
+    <Content Include="Content\images\icons-svg\back-black.svg" />
+    <Content Include="Content\images\icons-svg\back-white.svg" />
+    <Content Include="Content\images\icons-svg\bars-black.svg" />
+    <Content Include="Content\images\icons-svg\bars-white.svg" />
+    <Content Include="Content\images\icons-svg\bullets-black.svg" />
+    <Content Include="Content\images\icons-svg\bullets-white.svg" />
+    <Content Include="Content\images\icons-svg\calendar-black.svg" />
+    <Content Include="Content\images\icons-svg\calendar-white.svg" />
+    <Content Include="Content\images\icons-svg\camera-black.svg" />
+    <Content Include="Content\images\icons-svg\camera-white.svg" />
+    <Content Include="Content\images\icons-svg\carat-d-black.svg" />
+    <Content Include="Content\images\icons-svg\carat-d-white.svg" />
+    <Content Include="Content\images\icons-svg\carat-l-black.svg" />
+    <Content Include="Content\images\icons-svg\carat-l-white.svg" />
+    <Content Include="Content\images\icons-svg\carat-r-black.svg" />
+    <Content Include="Content\images\icons-svg\carat-r-white.svg" />
+    <Content Include="Content\images\icons-svg\carat-u-black.svg" />
+    <Content Include="Content\images\icons-svg\carat-u-white.svg" />
+    <Content Include="Content\images\icons-svg\check-black.svg" />
+    <Content Include="Content\images\icons-svg\check-white.svg" />
+    <Content Include="Content\images\icons-svg\clock-black.svg" />
+    <Content Include="Content\images\icons-svg\clock-white.svg" />
+    <Content Include="Content\images\icons-svg\cloud-black.svg" />
+    <Content Include="Content\images\icons-svg\cloud-white.svg" />
+    <Content Include="Content\images\icons-svg\comment-black.svg" />
+    <Content Include="Content\images\icons-svg\comment-white.svg" />
+    <Content Include="Content\images\icons-svg\delete-black.svg" />
+    <Content Include="Content\images\icons-svg\delete-white.svg" />
+    <Content Include="Content\images\icons-svg\edit-black.svg" />
+    <Content Include="Content\images\icons-svg\edit-white.svg" />
+    <Content Include="Content\images\icons-svg\eye-black.svg" />
+    <Content Include="Content\images\icons-svg\eye-white.svg" />
+    <Content Include="Content\images\icons-svg\forbidden-black.svg" />
+    <Content Include="Content\images\icons-svg\forbidden-white.svg" />
+    <Content Include="Content\images\icons-svg\forward-black.svg" />
+    <Content Include="Content\images\icons-svg\forward-white.svg" />
+    <Content Include="Content\images\icons-svg\gear-black.svg" />
+    <Content Include="Content\images\icons-svg\gear-white.svg" />
+    <Content Include="Content\images\icons-svg\grid-black.svg" />
+    <Content Include="Content\images\icons-svg\grid-white.svg" />
+    <Content Include="Content\images\icons-svg\heart-black.svg" />
+    <Content Include="Content\images\icons-svg\heart-white.svg" />
+    <Content Include="Content\images\icons-svg\home-black.svg" />
+    <Content Include="Content\images\icons-svg\home-white.svg" />
+    <Content Include="Content\images\icons-svg\info-black.svg" />
+    <Content Include="Content\images\icons-svg\info-white.svg" />
+    <Content Include="Content\images\icons-svg\location-black.svg" />
+    <Content Include="Content\images\icons-svg\location-white.svg" />
+    <Content Include="Content\images\icons-svg\lock-black.svg" />
+    <Content Include="Content\images\icons-svg\lock-white.svg" />
+    <Content Include="Content\images\icons-svg\mail-black.svg" />
+    <Content Include="Content\images\icons-svg\mail-white.svg" />
+    <Content Include="Content\images\icons-svg\minus-black.svg" />
+    <Content Include="Content\images\icons-svg\minus-white.svg" />
+    <Content Include="Content\images\icons-svg\navigation-black.svg" />
+    <Content Include="Content\images\icons-svg\navigation-white.svg" />
+    <Content Include="Content\images\icons-svg\phone-black.svg" />
+    <Content Include="Content\images\icons-svg\phone-white.svg" />
+    <Content Include="Content\images\icons-svg\plus-black.svg" />
+    <Content Include="Content\images\icons-svg\plus-white.svg" />
+    <Content Include="Content\images\icons-svg\power-black.svg" />
+    <Content Include="Content\images\icons-svg\power-white.svg" />
+    <Content Include="Content\images\icons-svg\recycle-black.svg" />
+    <Content Include="Content\images\icons-svg\recycle-white.svg" />
+    <Content Include="Content\images\icons-svg\refresh-black.svg" />
+    <Content Include="Content\images\icons-svg\refresh-white.svg" />
+    <Content Include="Content\images\icons-svg\search-black.svg" />
+    <Content Include="Content\images\icons-svg\search-white.svg" />
+    <Content Include="Content\images\icons-svg\shop-black.svg" />
+    <Content Include="Content\images\icons-svg\shop-white.svg" />
+    <Content Include="Content\images\icons-svg\star-black.svg" />
+    <Content Include="Content\images\icons-svg\star-white.svg" />
+    <Content Include="Content\images\icons-svg\tag-black.svg" />
+    <Content Include="Content\images\icons-svg\tag-white.svg" />
+    <Content Include="Content\images\icons-svg\user-black.svg" />
+    <Content Include="Content\images\icons-svg\user-white.svg" />
+    <Content Include="Content\images\icons-svg\video-black.svg" />
+    <Content Include="Content\images\icons-svg\video-white.svg" />
+    <Content Include="Content\jquery.mobile-1.4.5.css" />
+    <Content Include="Content\jquery.mobile-1.4.5.min.css" />
+    <Content Include="Content\jquery.mobile.external-png-1.4.5.css" />
+    <Content Include="Content\jquery.mobile.external-png-1.4.5.min.css" />
+    <Content Include="Content\jquery.mobile.icons-1.4.5.css" />
+    <Content Include="Content\jquery.mobile.icons-1.4.5.min.css" />
+    <Content Include="Content\jquery.mobile.inline-png-1.4.5.css" />
+    <Content Include="Content\jquery.mobile.inline-png-1.4.5.min.css" />
+    <Content Include="Content\jquery.mobile.inline-svg-1.4.5.css" />
+    <Content Include="Content\jquery.mobile.inline-svg-1.4.5.min.css" />
+    <Content Include="Content\jquery.mobile.structure-1.4.5.css" />
+    <Content Include="Content\jquery.mobile.structure-1.4.5.min.css" />
+    <Content Include="Content\jquery.mobile.theme-1.4.5.css" />
+    <Content Include="Content\jquery.mobile.theme-1.4.5.min.css" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="Content\Style.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <EntityDeploy Include="AIPModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AIPModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="AIPModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AIPModel.edmx</DependentUpon>
+      <LastGenOutput>AIPModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="AIPModel.edmx.diagram">
+      <DependentUpon>AIPModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="AIPModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AIPModel.edmx</DependentUpon>
+      <LastGenOutput>AIPModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="ClassDiagram1.cd" />
+    <EntityDeploy Include="Models\ViewModel\G3_User.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>G3_User.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Images\201002262016401.jpg" />
+    <Content Include="Images\HealthEducation.jpg" />
+    <Content Include="Images\Measure.jpg" />
+    <Content Include="Images\Monitor.jpg" />
+    <Content Include="Images\Notify.jpg" />
+    <Content Include="Models\ViewModel\G3_User.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>G3_User.edmx</DependentUpon>
+      <LastGenOutput>G3_User.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ViewModel\G3_User.edmx.diagram">
+      <DependentUpon>G3_User.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\ViewModel\G3_User.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>G3_User.edmx</DependentUpon>
+      <LastGenOutput>G3_User1.cs</LastGenOutput>
+    </Content>
+    <EntityDeploy Include="Models\ViewModel\G3_Measure_BloodPressure.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>G3_Measure_BloodPressure.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ViewModel\G3_Measure_BloodPressure.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>G3_Measure_BloodPressure.edmx</DependentUpon>
+      <LastGenOutput>G3_Measure_BloodPressure.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ViewModel\G3_Measure_BloodPressure.edmx.diagram">
+      <DependentUpon>G3_Measure_BloodPressure.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\ViewModel\G3_Measure_BloodPressure.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>G3_Measure_BloodPressure.edmx</DependentUpon>
+      <LastGenOutput>G3_Measure_BloodPressure1.cs</LastGenOutput>
+    </Content>
+    <EntityDeploy Include="Models\ViewModel\G3_Measure_BloodGlucose.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>G3_Measure_BloodGlucose.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ViewModel\G3_Measure_BloodGlucose.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>G3_Measure_BloodGlucose.edmx</DependentUpon>
+      <LastGenOutput>G3_Measure_BloodGlucose.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ViewModel\G3_Measure_BloodGlucose.edmx.diagram">
+      <DependentUpon>G3_Measure_BloodGlucose.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\ViewModel\G3_Measure_BloodGlucose.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>G3_Measure_BloodGlucose.edmx</DependentUpon>
+      <LastGenOutput>G3_Measure_BloodGlucose1.cs</LastGenOutput>
+    </Content>
+    <EntityDeploy Include="Models\ViewModel\G3_Measure_ABG.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>G3_Measure_ABG.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ViewModel\G3_Measure_ABG.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>G3_Measure_ABG.edmx</DependentUpon>
+      <LastGenOutput>G3_Measure_ABG.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ViewModel\G3_Measure_ABG.edmx.diagram">
+      <DependentUpon>G3_Measure_ABG.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\ViewModel\G3_Measure_ABG.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>G3_Measure_ABG.edmx</DependentUpon>
+      <LastGenOutput>G3_Measure_ABG1.cs</LastGenOutput>
+    </Content>
+    <EntityDeploy Include="Models\ViewModel\G3_Measure_BMI.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>G3_Measure_BMI.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ViewModel\G3_Measure_BMI.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>G3_Measure_BMI.edmx</DependentUpon>
+      <LastGenOutput>G3_Measure_BMI.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ViewModel\G3_Measure_BMI.edmx.diagram">
+      <DependentUpon>G3_Measure_BMI.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\ViewModel\G3_Measure_BMI.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>G3_Measure_BMI.edmx</DependentUpon>
+      <LastGenOutput>G3_Measure_BMI1.cs</LastGenOutput>
+    </Content>
+    <EntityDeploy Include="Models\ViewModel\G3_Monitor_Family.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>G3_Monitor_Family.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ViewModel\G3_Monitor_Family.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>G3_Monitor_Family.edmx</DependentUpon>
+      <LastGenOutput>G3_Monitor_Family.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ViewModel\G3_Monitor_Family.edmx.diagram">
+      <DependentUpon>G3_Monitor_Family.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\ViewModel\G3_Monitor_Family.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>G3_Monitor_Family.edmx</DependentUpon>
+      <LastGenOutput>G3_Monitor_Family1.cs</LastGenOutput>
+    </Content>
+    <EntityDeploy Include="Models\ViewModel\G3_Monitor_FamilyApplication.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>G3_Monitor_FamilyApplication.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ViewModel\G3_Monitor_FamilyApplication.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>G3_Monitor_FamilyApplication.edmx</DependentUpon>
+      <LastGenOutput>G3_Monitor_FamilyApplication.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ViewModel\G3_Monitor_FamilyApplication.edmx.diagram">
+      <DependentUpon>G3_Monitor_FamilyApplication.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\ViewModel\G3_Monitor_FamilyApplication.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>G3_Monitor_FamilyApplication.edmx</DependentUpon>
+      <LastGenOutput>G3_Monitor_FamilyApplication1.cs</LastGenOutput>
+    </Content>
+    <EntityDeploy Include="Models\ViewModel\G3_Monitor_Friends.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>G3_Monitor_Friends.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ViewModel\G3_Monitor_Friends.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>G3_Monitor_Friends.edmx</DependentUpon>
+      <LastGenOutput>G3_Monitor_Friends.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ViewModel\G3_Monitor_Friends.edmx.diagram">
+      <DependentUpon>G3_Monitor_Friends.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\ViewModel\G3_Monitor_Friends.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>G3_Monitor_Friends.edmx</DependentUpon>
+      <LastGenOutput>G3_Monitor_Friends1.cs</LastGenOutput>
+    </Content>
+    <EntityDeploy Include="Models\ViewModel\G3_Monitor_FriendApplication.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>G3_Monitor_FriendApplication.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ViewModel\G3_Monitor_FriendApplication.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>G3_Monitor_FriendApplication.edmx</DependentUpon>
+      <LastGenOutput>G3_Monitor_FriendApplication.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ViewModel\G3_Monitor_FriendApplication.edmx.diagram">
+      <DependentUpon>G3_Monitor_FriendApplication.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\ViewModel\G3_Monitor_FriendApplication.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>G3_Monitor_FriendApplication.edmx</DependentUpon>
+      <LastGenOutput>G3_Monitor_FriendApplication1.cs</LastGenOutput>
+    </Content>
+    <EntityDeploy Include="Models\ViewModel\G3_HealthEducation.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>G3_HealthEducation.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ViewModel\G3_HealthEducation.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>G3_HealthEducation.edmx</DependentUpon>
+      <LastGenOutput>G3_HealthEducation.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ViewModel\G3_HealthEducation.edmx.diagram">
+      <DependentUpon>G3_HealthEducation.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\ViewModel\G3_HealthEducation.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>G3_HealthEducation.edmx</DependentUpon>
+      <LastGenOutput>G3_HealthEducation1.cs</LastGenOutput>
+    </Content>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <EntityDeploy Include="Models\ViewModel\G1_User_Account.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>G1_User_Account.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ViewModel\G1_User_Account.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>G1_User_Account.edmx</DependentUpon>
+      <LastGenOutput>G1_User_Account.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ViewModel\G1_User_Account.edmx.diagram">
+      <DependentUpon>G1_User_Account.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\ViewModel\G1_User_Account.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>G1_User_Account.edmx</DependentUpon>
+      <LastGenOutput>G1_User_Account1.cs</LastGenOutput>
+    </Content>
+    <EntityDeploy Include="Models\ViewModel\G3_SystemAdministrator_HealthLink.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>G3_SystemAdministrator_HealthLink.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ViewModel\G3_SystemAdministrator_HealthLink.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>G3_SystemAdministrator_HealthLink.edmx</DependentUpon>
+      <LastGenOutput>G3_SystemAdministrator_HealthLink.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ViewModel\G3_SystemAdministrator_HealthLink.edmx.diagram">
+      <DependentUpon>G3_SystemAdministrator_HealthLink.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\ViewModel\G3_SystemAdministrator_HealthLink.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>G3_SystemAdministrator_HealthLink.edmx</DependentUpon>
+      <LastGenOutput>G3_SystemAdministrator_HealthLink1.cs</LastGenOutput>
+    </Content>
+    <EntityDeploy Include="Models\ViewModel\G1_User_Identity.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>G1_User_Identity.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ViewModel\G1_User_Identity.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>G1_User_Identity.edmx</DependentUpon>
+      <LastGenOutput>G1_User_Identity.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ViewModel\G1_User_Identity.edmx.diagram">
+      <DependentUpon>G1_User_Identity.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\ViewModel\G1_User_Identity.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>G1_User_Identity.edmx</DependentUpon>
+      <LastGenOutput>G1_User_Identity1.cs</LastGenOutput>
+    </Content>
+    <EntityDeploy Include="Models\ViewModel\G1_User_FamilyMember.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>G1_User_FamilyMember.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ViewModel\G1_User_FamilyMember.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>G1_User_FamilyMember.edmx</DependentUpon>
+      <LastGenOutput>G1_User_FamilyMember.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ViewModel\G1_User_FamilyMember.edmx.diagram">
+      <DependentUpon>G1_User_FamilyMember.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\ViewModel\G1_User_FamilyMember.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>G1_User_FamilyMember.edmx</DependentUpon>
+      <LastGenOutput>G1_User_FamilyMember1.cs</LastGenOutput>
+    </Content>
+    <EntityDeploy Include="Models\ViewModel\G3_Measure_Air.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>G3_Measure_Air.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ViewModel\G3_Measure_Breath.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>G3_Measure_Air.edmx</DependentUpon>
+      <LastGenOutput>G3_Measure_Breath.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ViewModel\G3_Measure_Air.edmx.diagram">
+      <DependentUpon>G3_Measure_Air.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\ViewModel\G3_Measure_Breath.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>G3_Measure_Air.edmx</DependentUpon>
+      <LastGenOutput>G3_Measure_Breath.cs</LastGenOutput>
+    </Content>
+    <EntityDeploy Include="Models\ViewModel\G3_Measure_GSR.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>G3_Measure_GSR.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ViewModel\G3_Measure_GSR.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>G3_Measure_GSR.edmx</DependentUpon>
+      <LastGenOutput>G3_Measure_GSR.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ViewModel\G3_Measure_GSR.edmx.diagram">
+      <DependentUpon>G3_Measure_GSR.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\ViewModel\G3_Measure_GSR.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>G3_Measure_GSR.edmx</DependentUpon>
+      <LastGenOutput>G3_Measure_GSR1.cs</LastGenOutput>
+    </Content>
+    <EntityDeploy Include="Models\ViewModel\G3_Measure_GyroValues.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>G3_Measure_GyroValues.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ViewModel\G3_Measure_GyroValues.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>G3_Measure_GyroValues.edmx</DependentUpon>
+      <LastGenOutput>G3_Measure_GyroValues.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ViewModel\G3_Measure_GyroValues.edmx.diagram">
+      <DependentUpon>G3_Measure_GyroValues.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\ViewModel\G3_Measure_GyroValues.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>G3_Measure_GyroValues.edmx</DependentUpon>
+      <LastGenOutput>G3_Measure_GyroValues1.cs</LastGenOutput>
+    </Content>
+    <EntityDeploy Include="Models\ViewModel\G3_Measure_Temperature.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>G3_Measure_Temperature.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ViewModel\G3_Measure_Temperature.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>G3_Measure_Temperature.edmx</DependentUpon>
+      <LastGenOutput>G3_Measure_Temperature.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ViewModel\G3_Measure_Temperature.edmx.diagram">
+      <DependentUpon>G3_Measure_Temperature.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\ViewModel\G3_Measure_Temperature.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>G3_Measure_Temperature.edmx</DependentUpon>
+      <LastGenOutput>G3_Measure_Temperature1.cs</LastGenOutput>
+    </Content>
+    <EntityDeploy Include="Models\ViewModel\G3_Measure_Pulse.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>G3_Measure_Pulse.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ViewModel\G3_Measure_Pulse.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>G3_Measure_Pulse.edmx</DependentUpon>
+      <LastGenOutput>G3_Measure_Pulse.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ViewModel\G3_Measure_Pulse.edmx.diagram">
+      <DependentUpon>G3_Measure_Pulse.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\ViewModel\G3_Measure_Pulse.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>G3_Measure_Pulse.edmx</DependentUpon>
+      <LastGenOutput>G3_Measure_Pulse1.cs</LastGenOutput>
+    </Content>
+    <EntityDeploy Include="Models\ViewModel\G3_Monitor_Notice.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>G3_Monitor_Notice.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ViewModel\G3_Monitor_Notice.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>G3_Monitor_Notice.edmx</DependentUpon>
+      <LastGenOutput>G3_Monitor_Notice.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ViewModel\G3_Monitor_Notice.edmx.diagram">
+      <DependentUpon>G3_Monitor_Notice.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\ViewModel\G3_Monitor_Notice.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>G3_Monitor_Notice.edmx</DependentUpon>
+      <LastGenOutput>G3_Monitor_Notice1.cs</LastGenOutput>
+    </Content>
+    <EntityDeploy Include="Models\ViewModel\G3_Nutrition_Nutrition.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>G3_Nutrition_Nutrition.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ViewModel\G3_Nutrition_Nutrition.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>G3_Nutrition_Nutrition.edmx</DependentUpon>
+      <LastGenOutput>G3_Nutrition_Nutrition.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ViewModel\G3_Nutrition_Nutrition.edmx.diagram">
+      <DependentUpon>G3_Nutrition_Nutrition.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\ViewModel\G3_Nutrition_Nutrition.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>G3_Nutrition_Nutrition.edmx</DependentUpon>
+      <LastGenOutput>G3_Nutrition_Nutrition1.cs</LastGenOutput>
+    </Content>
+    <None Include="Properties\PublishProfiles\group3.pubxml" />
+    <Content Include="Images\11.jpg" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.8.2.js" />
+    <Content Include="Scripts\jquery-1.8.2.min.js" />
+    <None Include="Scripts\jquery-2.1.4.intellisense.js" />
+    <Content Include="Scripts\jquery-2.1.4.js" />
+    <Content Include="Scripts\jquery-2.1.4.min.js" />
+    <Content Include="Scripts\jquery.mobile-1.4.5.js" />
+    <Content Include="Scripts\jquery.mobile-1.4.5.min.js" />
+    <Content Include="Scripts\jquery.mobile-1.4.5.min.map" />
+    <Content Include="Scripts\jquery-2.1.4.min.map" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.8.24.js" />
+    <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\knockout-2.2.0.debug.js" />
+    <Content Include="Scripts\knockout-2.2.0.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Account\UserRegister.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\measure\BloodPressureOutput.cshtml" />
+    <Content Include="Views\measure\ABGOutput.cshtml" />
+    <Content Include="Views\Monitor\Index.cshtml" />
+    <Content Include="Views\notify\Index.cshtml" />
+    <Content Include="Views\Introduction\Index.cshtml" />
+    <Content Include="Views\Introduction\measure.cshtml" />
+    <Content Include="Views\Introduction\Knowledge.cshtml" />
+    <Content Include="Views\Introduction\Monitor.cshtml" />
+    <Content Include="Views\Introduction\notify.cshtml" />
+    <Content Include="Views\Home\Idea.cshtml" />
+    <Content Include="Views\Home\Team.cshtml" />
+    <Content Include="Views\sponsor\Index.cshtml" />
+    <Content Include="Views\Account\DeleteOutput.cshtml" />
+    <Content Include="Views\measure\BloodPressureInput.cshtml" />
+    <Content Include="Views\measure\ABGInput.cshtml" />
+    <Content Include="Views\measure\BloodGlucoseInput.cshtml" />
+    <Content Include="Views\measure\BloodGlucoseOutput.cshtml" />
+    <Content Include="Views\measure\BMIInput.cshtml" />
+    <Content Include="Views\measure\BMIOutput.cshtml" />
+    <Content Include="Views\Account\id.cshtml" />
+    <Content Include="Views\Account\RegisterOutput.cshtml" />
+    <Content Include="Views\measure\BloodPressureHistory.cshtml" />
+    <Content Include="Views\measure\BloodGlucoseHistory.cshtml" />
+    <Content Include="Views\measure\ABGHistory.cshtml" />
+    <Content Include="Views\measure\BMIHistory.cshtml" />
+    <Content Include="Views\Monitor\UserHealthyInformation.cshtml" />
+    <Content Include="Views\Monitor\HealthyInformation.cshtml" />
+    <Content Include="Views\Monitor\AddFamilyOutput.cshtml" />
+    <Content Include="Views\Account\Delete.cshtml" />
+    <Content Include="Views\Monitor\AddFriendOutput.cshtml" />
+    <Content Include="Views\notify\OutDoor.cshtml" />
+    <Content Include="Views\notify\LookAfter.cshtml" />
+    <Content Include="Views\notify\Rehabilitation.cshtml" />
+    <Content Include="Views\HealthEducation\Index.cshtml" />
+    <Content Include="Views\HealthEducation\Details.cshtml" />
+    <Content Include="Views\HealthEducation\Create.cshtml" />
+    <Content Include="Views\HealthEducation\Edit.cshtml" />
+    <Content Include="Views\HealthEducation\Delete.cshtml" />
+    <Content Include="Views\HealthEducation\Details_other.cshtml" />
+    <Content Include="Views\HealthEducation\HealthLink.cshtml" />
+    <Content Include="Views\Account\Manage.cshtml" />
+    <Content Include="Views\Partner\Index.cshtml" />
+    <Content Include="Views\SystemAdministrator\HealthLink.cshtml" />
+    <Content Include="Views\SystemAdministrator\Create.cshtml" />
+    <Content Include="Views\SystemAdministrator\Edit.cshtml" />
+    <Content Include="Views\SystemAdministrator\Delete.cshtml" />
+    <Content Include="Views\measure\ABG.cshtml" />
+    <Content Include="Views\measure\BloodGlucose.cshtml" />
+    <Content Include="Views\measure\BMI.cshtml" />
+    <Content Include="Views\measure\BloodPressure.cshtml" />
+    <Content Include="Views\Monitor\AddFamily.cshtml" />
+    <Content Include="Views\Monitor\AddFriend.cshtml" />
+    <Content Include="Views\Monitor\DeleteFriend.cshtml" />
+    <Content Include="Views\Monitor\Friends.cshtml" />
+    <Content Include="Views\Monitor\Family.cshtml" />
+    <Content Include="Views\Monitor\Volunteers.cshtml" />
+    <Content Include="Views\measure\Breath.cshtml" />
+    <Content Include="Views\measure\BreathHistory.cshtml" />
+    <Content Include="Views\measure\BreathInput.cshtml" />
+    <Content Include="Views\measure\BreathOutput.cshtml" />
+    <Content Include="Views\measure\GSR.cshtml" />
+    <Content Include="Views\measure\GSRInput.cshtml" />
+    <Content Include="Views\measure\GSROutput.cshtml" />
+    <Content Include="Views\measure\GSRHistory.cshtml" />
+    <Content Include="Views\measure\GyroValues.cshtml" />
+    <Content Include="Views\measure\GyroValuesInput.cshtml" />
+    <Content Include="Views\measure\GyroValuesOutput.cshtml" />
+    <Content Include="Views\measure\GyroValuesHistory.cshtml" />
+    <Content Include="Views\measure\Temperature.cshtml" />
+    <Content Include="Views\measure\TemperatureInput.cshtml" />
+    <Content Include="Views\measure\TemperatureOutput.cshtml" />
+    <Content Include="Views\measure\TemperatureHistory.cshtml" />
+    <Content Include="Views\measure\Pulse.cshtml" />
+    <Content Include="Views\measure\PulseInput.cshtml" />
+    <Content Include="Views\measure\PulseOutput.cshtml" />
+    <Content Include="Views\measure\PulseHistory.cshtml" />
+    <Content Include="Views\notify\SystemNotify.cshtml" />
+    <Content Include="Views\notify\Edit.cshtml" />
+    <Content Include="Views\notify\SystemNotifyComplete.cshtml" />
+    <Content Include="Views\Nutrition\Index.cshtml" />
+    <Content Include="Views\Nutrition\View.cshtml" />
+    <Content Include="Views\Nutrition\Create.cshtml" />
+    <Content Include="Views\Nutrition\Edit.cshtml" />
+    <Content Include="Views\Nutrition\Delete.cshtml" />
+    <Content Include="Views\Nutrition\Details.cshtml" />
+    <Content Include="Views\Nutrition\UserView.cshtml" />
+    <Content Include="Views\Nutrition\UserDetails.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Filters\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>55662</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:55662/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

@@ -1,0 +1,140 @@
+﻿@model AIPProject01.ViewModels.Relationship
+@{
+    ViewBag.Title = "身心健康與安全管理系統";
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+        </div>
+    </section>
+}
+
+<section>
+    <div class="container">
+        <div style="overflow:auto; border: 2px #ccc solid; padding: 10px">
+            <div>
+                <input class="float_right" type="button" value="新增好友" style="font-size:20px; width:30%; margin-left:70%" onclick="AddFriend()" />
+            </div>
+            <p></p>
+            <div style="overflow:hidden;">
+                @{
+                    if (@Model.ApplicationKey == 0)
+                    {
+                        <p><span class="label" style='color:black'>您目前沒有發出好友邀請</span></p>
+                    }
+                    else
+                    {
+                        <p><span class="label" style='color:black'>發出的好友邀請</span></p>
+                        <table class="table">
+                            <tr>
+                                <th class="col-sm-1">使用者頭像</th>
+                                <th class="col-sm-1">使用者名稱</th>
+                                <th class="col-sm-1">操作選項</th>
+                            </tr>
+                            @foreach (var item in Model.RelationshipApplicationList)
+                            {
+                                <tr>
+                                    <td class="active">
+                                        Photo
+                                    </td>
+                                    <td class="info">
+                                        @item.email
+                                    </td>
+                                    <td class="warning">
+                                        <form action="CancelFriendApplication" method="post">
+                                            <input id="@item.email" type="hidden" name="Name" value="@item.email" />
+                                            <input type="submit" value="取消申請" />
+                                        </form>
+                                    </td>
+                                </tr>
+                            }
+                        </table>
+                    }
+                }
+            </div>
+            <div style="overflow:hidden;">
+                @{
+                    if (@Model.WaitKey == 0)
+                    {
+                        <p><span class="label" style='color:black'>您目前沒有接到好友邀請</span></p>
+                    }
+                    else
+                    {
+                        <p><span class="label" style='color:black'>接到的好友邀請</span></p>
+                        <table class="table">
+                            <tr>
+                                <th class="col-sm-1">使用者頭像</th>
+                                <th class="col-sm-1">使用者名稱</th>
+                                <th class="col-sm-1">操作選項</th>
+                            </tr>
+                            @foreach (var item in Model.RelationshipWaitList)
+                            {
+                                <tr>
+                                    <td class="active">
+                                        Photo
+                                    </td>
+                                    <td class="info">
+                                        @item.email
+                                    </td>
+                                    <td class="warning">
+                                        <form action="AgreeFriendApplication" method="post">
+                                            <input id="@item.email" type="hidden" name="Name" value="@item.email" />
+                                            <input class="float-right" type="submit" value="同意" />
+                                        </form>
+                                    </td>
+                                </tr>
+                            }
+                        </table>
+                    }
+                }
+            </div>
+            <div style="overflow:hidden;">
+                @{
+                    if (@Model.RelationshipKey == 0)
+                    {
+                        <p><span class="label" style='color:black'>您目前還沒有好友</span></p>
+                    }
+                    else
+                    {
+                        <p><span class="label" style='color:black'>您目前的好友</span></p>
+                        <table class="table">
+                            <tr>
+                                <th class="col-sm-1">使用者頭像</th>
+                                <th class="col-sm-1">使用者名稱</th>
+                                <th class="col-sm-1">操作選項</th>
+                            </tr>
+                            @foreach (var item in Model.RelationshipList)
+                            {
+                                <tr>
+                                    <td class="active">
+                                        Photo
+                                    </td>
+                                    <td class="info">
+                                        @item.email
+                                    </td>
+                                    <td class="warning">
+                                        <form action="HealthyInformation" method="post" style=" margin:0px; display:inline ">
+                                            <input id="@item.email" type="hidden" name="Name" value="@item.email" />
+                                            <input id="@Model.WhereKey" type="hidden" name="WhereKey" value="@Model.WhereKey" />
+                                            <input class="media-right" type="submit" value="健康狀況" style="font-size:20px;" />
+                                        </form>
+                                        <form action="DeleteFriend" method="post" style=" margin:0px; display:inline ">
+                                            <input id="@item.email" type="hidden" name="Name" value="@item.email" />
+                                            <input id="@Model.WhereKey" type="hidden" name="WhereKey" value="@Model.WhereKey" />
+                                            <input class="media-right" type="submit" value="刪除" style="font-size:20px;" />
+                                        </form>
+                                    </td>
+                                </tr>
+                            }
+                        </table>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</section>
+

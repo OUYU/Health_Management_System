@@ -1,0 +1,78 @@
+﻿@{
+    ViewBag.Title = "身心健康與安全管理系統";
+}
+
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+            @*<p>
+                    To learn more about ASP.NET MVC visit
+                    <a href="http://asp.net/mvc" title="ASP.NET MVC Website">http://asp.net/mvc</a>.
+                    The page features <mark>videos, tutorials, and samples</mark> to help you get the most from ASP.NET MVC.
+                    If you have any questions about ASP.NET MVC visit
+                    <a href="http://forums.asp.net/1146.aspx/1?MVC" title="ASP.NET MVC Forum">our forums</a>.
+                </p>*@
+            <p>
+            </p>
+        </div>
+    </section>
+}
+
+
+
+<div class="container">
+    <div id="myCarousel" class="carousel slide" data-interval="3000">
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+        </ol>
+        <!-- Carousel items -->
+        <div class="carousel-inner">
+            <div class="active item">
+                <img src="~/Images/Measure.jpg" style="width:100%" />
+                <div class="carousel-caption">
+                    <h3 style="color:black">量測功能</h3>
+                    <p style="color:black">
+                        透過您輸入測量後的身體資訊(如 : 血壓、血氧、血糖、體脂肪)，系透會告知您您的身體狀況及相關建議
+                    </p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="~/Images/Monitor.jpg" style="width:100%" />
+                <div class="carousel-caption">
+                    <h3 style="color:black">監測功能</h3>
+                    <p style="color:black">您可以透過此功能添加您熟識的人的帳號，當對方同意您的要求時，您可以瀏覽對方公開的資訊(如 : 身體資訊)</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="~/Images/Notify.jpg" style="width:100%" />
+                <div class="carousel-caption">
+                    <h3 style="color:black">通知功能</h3>
+                    <p style="color:black">
+                        您可以透過此功能向系統提出需求，系統會為您提供適當的幫助，如果事情超出系統處理的範圍，我們將會有專人與您聯繫， 如果您有其他特殊需求，請撥打 0800-XXX-XXX
+                    </p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="~/Images/HealthEducation.jpg" style="width:100%" />
+                <div class="carousel-caption">
+                    <h3 style="color:black">衛教功能</h3>
+                    <p style="color:black">在衛教功能中，您可以查詢和閱讀與衛生教育有關的文章</p>
+                </div>
+            </div>
+        </div>
+        <!-- Carousel nav -->
+        <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+            <span class="icon-prev"></span>
+        </a>
+        <a class="carousel-control right" href="#myCarousel" data-slide="next">
+            <span class="icon-next"></span>
+        </a>
+    </div>
+</div>

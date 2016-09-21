@@ -1,0 +1,36 @@
+﻿@model AIPProject01.Models.ViewModel.G3_User
+
+@{
+    ViewBag.Title = "身心健康與安全管理系統";
+}
+
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+        </div>
+    </section>
+}
+
+<section>
+    <header style="font-size:20px;">
+        <b>您的註冊資料</b>
+    </header>
+        <dl>
+            <dt style='font-size:30px;'>帳號 :</dt>
+            <dd style='font-size:30px;'>@Model.NAME</dd>
+
+            <dt style='font-size:30px;'>密碼 :</dt>
+            <dd style='font-size:30px;'>@Model.PASSWORD</dd>
+
+            <dt style='font-size:30px;'>性別 :</dt>
+            <dd style='font-size:30px;'>@Model.SEX</dd>
+        </dl>
+
+    <input type="button" value="繼續" onclick="Account()" />
+    <input type="button" value="返回主選單" onclick="re()" />
+    <input type="button" value="刪除帳號" onclick="Userdelete()" />
+</section>

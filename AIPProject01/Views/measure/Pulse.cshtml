@@ -1,0 +1,59 @@
+﻿@model AIPProject01.Models.ViewModel.G3_Measure_Pulse
+
+@{
+    ViewBag.Title = "身心健康與安全管理系統";
+}
+
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+        </div>
+    </section>
+}
+
+<section>
+    <div class="container">
+        <div style="overflow:auto; border: 2px #ccc solid; padding: 10px">
+            <header style="font-size:20px;">
+                <div>
+                    <p style='font-size:30px;'>最新的量測資料 :</p>
+                    @{
+                        if (@Model.Status == null)
+                        {
+                            <span class="label" style='color:black;font-size:25px'>沒有量測資料</span>
+                        }
+                        else
+                        {
+                            <table class="table">
+                                <tr>
+                                    <th class="col-sm-1">脈搏</th>
+                                    <th class="col-sm-1">量測時間</th>
+                                    <th class="col-sm-1">狀態</th>
+                                </tr>
+                                <tr>
+                                    <td class="active">
+                                        @Model.Pulse
+                                    </td>
+                                    <td class="info">
+                                        @Model.MeasurementDate
+                                    </td>
+                                    <td class="warning">
+                                        @Model.Status
+                                    </td>
+                                </tr>
+                            </table>
+                        }
+                    }
+                </div>
+                <div>
+                    <input type="button" value="歷史紀錄" onclick="PulseHistory()" />
+                    <input type="button" value="開始量測" onclick="PulseAgain()" />
+                </div>
+            </header>
+        </div>
+    </div>
+</section>

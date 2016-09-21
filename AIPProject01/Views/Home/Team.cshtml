@@ -1,0 +1,123 @@
+﻿@{
+    ViewBag.Title = "身心健康與安全管理系統";
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+            @*<p>
+                    To learn more about ASP.NET MVC visit
+                    <a href="http://asp.net/mvc" title="ASP.NET MVC Website">http://asp.net/mvc</a>.
+                    The page features <mark>videos, tutorials, and samples</mark> to help you get the most from ASP.NET MVC.
+                    If you have any questions about ASP.NET MVC visit
+                    <a href="http://forums.asp.net/1146.aspx/1?MVC" title="ASP.NET MVC Forum">our forums</a>.
+                </p>*@
+        </div>
+    </section>
+}
+
+@*<article>
+        <p>
+            Use this area to provide additional information.
+        </p>
+
+        <p>
+            Use this area to provide additional information.
+        </p>
+
+        <p>
+            Use this area to provide additional information.
+        </p>
+    </article>
+
+    <aside>
+        <h3>Aside Title</h3>
+        <p>
+            Use this area to provide additional information.
+        </p>
+        <ul>
+            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+            <li>@Html.ActionLink("About", "About", "Home")</li>
+            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+        </ul>
+    </aside>*@
+
+<section>
+    <div id="menu" class="float-left" style='width:162px; border-top-style:solid; border-top-width:3px; border-top-color:blue'>
+        <div style='background-color:white;'>
+            <a href="/home/Idea" style='font-size:30px; text-decoration: none; color: black; padding: 3px 18px;
+                       font-weight:400; display: block; border-style:solid; border-width:3px; border-color:blue;
+                       border-top-style:none'>
+                開發理念
+            </a>
+        </div>
+        <div style='background-color:white;'>
+            <a href="/home/Team" style='font-size:30px; text-decoration: none; color: black; padding: 3px 18px;
+                       font-weight: 400; display: block; border-style:solid; border-width:3px; border-color:blue;
+                       border-top-style:none'>
+                開發團隊
+            </a>
+        </div>
+        <div style='background-color:white;'>
+            <a href="/home/Contact" style='font-size:30px; text-decoration: none; color: black; padding: 3px 18px;
+                       font-weight: 400; display: block; border-style:solid; border-width:3px; border-color:blue;
+                       border-top-style:none'>
+                聯絡我們
+            </a>
+        </div>
+    </div>
+    <div class="checkbox float-right" style="box-sizing:border-box; border-style:double; width:80%">
+        <div style="overflow:scroll; height: 480px; border: 2px #ccc solid; padding: 10px">
+            <header style="font-size:20px;">
+                <b>歡迎使用身心健康管理系統</b>
+
+                <aside id="menu" class="float-left" style='width:721px'>
+                    <ol>
+                        <li>
+                            <dl>
+                                使用本系統前，請先登入系統，若您非本系統會員，請前往以下網址進行註冊:
+                                http://asp.net/mvc
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>量測功能 :</dt>
+                                <dd>透過您輸入測量後的身體資訊(如 : 血壓、血氧、血糖、體脂肪)，系透會告知您您的身體狀況及相關建議</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>監測功能 :</dt>
+                                <dd>您可以透過此功能添加您熟識的人的帳號，當對方同意您的要求時，您可以瀏覽對方公開的資訊(如 : 身體資訊)</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>通知功能 :</dt>
+                                <dd>
+                                    您可以透過此功能向系統提出需求，系統會為您提供適當的幫助，如果事情超出系統處理的範圍，我們將會有專人與您聯繫，
+                                    如果您有其他特殊需求，請撥打 0800-XXX-XXX
+                                </dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>衛教功能 :</dt>
+                                <dd>在衛教功能中，您可以查詢和閱讀與衛生教育有關的文章</dd>
+                            </dl>
+                        </li>
+                    </ol>
+                </aside>
+                <div align=center>
+                    -----------------------------------------------------------------------------------------
+                </div>
+                <p>
+                    很高興為您服務 ! 能隨時關心您的健康是我們的榮幸，對於本系統有任何疑問歡迎提出，感謝不吝指教。 祝您身體健康 !
+                </p>
+            </header>
+        </div>
+    </div>
+</section>

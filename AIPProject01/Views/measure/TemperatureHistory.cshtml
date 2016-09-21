@@ -1,0 +1,103 @@
+﻿@model List<AIPProject01.Models.ViewModel.G3_Measure_Temperature>
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+<script src="http://cdn.oesmith.co.uk/morris-0.4.1.min.js"></script>
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+
+@{
+    ViewBag.Title = "身心健康與安全管理系統";
+}
+
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+        </div>
+    </section>
+}
+
+<section>
+    <div class="container">
+        <div style="overflow:auto; border: 2px #ccc solid; padding: 10px">
+            <section>
+                <header style="font-size:20px;">
+                    <b>量測紀錄</b>
+                </header>
+
+                <table class="table">
+                    <tr>
+                        <th class="col-sm-1">溫度</th>
+                        <th class="col-sm-1">量測時間</th>
+                        <th class="col-sm-1">狀態</th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td class="active">
+                                @item.Temperature
+                            </td>
+                            <td class="info">
+                                @item.MeasurementDate
+                            </td>
+                            <td class="warning">
+                                @item.Status
+                            </td>
+                        </tr>
+                    }
+                </table>
+                <div id="myfirstchart" style="height: 250px;"></div>
+                <div id="donut-chart"></div>
+                <script>
+                    $(function () {
+                        //創一個空個陣列
+                        var DonutDataList = [];
+
+                        //呼叫 Controller 中的 GetDonutData()
+                        $.getJSON("GetDonutDataTemperature", null, function (result) {
+                            //將回傳結果解析後存入陣列
+                            for (var item in result) {
+                                var data = JSON.parse(JSON.stringify(result[item]));
+                                DonutDataList.push(data);
+                            };
+
+                            getDonutChart(DonutDataList, 'donut-chart');
+
+                        });
+
+                        function getDonutChart(list, name) {
+                            Morris.Line({
+                                // ID of the element in which to draw the chart.
+                                element: name,
+                                // Chart data records -- each entry in this array corresponds to a point on
+                                // the chart.
+                                data: list,
+                                smooth: false,
+                                parseTime: false,
+                                // The name of the data record attribute that contains x-values.
+                                xkey: ['Year'],
+                                // A list of names of data record attributes that contain y-values.
+                                ykeys: ['value'],
+                                // Labels for the ykeys -- will be displayed when you hover over the
+                                // chart.
+                                labels: ['Temperature']
+                            });
+                        };
+                    })
+                </script>
+                <input type="button" value="開始量測" onclick="TemperatureAgain()" />
+                <input type="button" value="返回" onclick="ReTemperature()" />
+            </section>
+        </div>
+    </div>
+</section>
+
+

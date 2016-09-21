@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AIPModel14StoreContainer" CdmEntityContainer="AIPEntities22">
+    <EntitySetMapping Name="G1_User_FamilyMember">
+      <EntityTypeMapping TypeName="AIPModel14.G1_User_FamilyMember">
+        <MappingFragment StoreEntitySet="G1_User_FamilyMember">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="relatives" ColumnName="relatives" />
+          <ScalarProperty Name="id_relatives" ColumnName="id_relatives" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

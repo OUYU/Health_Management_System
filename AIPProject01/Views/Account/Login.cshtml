@@ -1,0 +1,42 @@
+﻿@*@model AIPProject01.Models.ViewModel.G3_User*@
+@model AIPProject01.Models.ViewModel.LoginViewModel
+
+@{
+    ViewBag.Title = "身心健康與安全管理系統";
+}
+
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+        </div>
+    </section>
+}
+
+<form class="form-horizontal" method="post" action="Login">
+    <div class="form-group">
+        <label class="col-sm-2 control-label">帳號</label>
+        <div class="col-sm-3">
+            <input id="Account" name="Account" type="text" class="form-control" placeholder="帳號" required />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">密碼</label>
+        <div class="col-sm-3">
+            <input id="Password" name="Password" type="password" class="form-control" placeholder="密碼" required />
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-primary">登入</button>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <input type="button" value="註冊" onclick="Register()" /> 沒有帳號?
+        </div>
+    </div>
+</form>

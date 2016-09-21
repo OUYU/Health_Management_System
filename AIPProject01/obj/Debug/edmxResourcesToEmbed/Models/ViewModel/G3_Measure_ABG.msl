@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AIPModel4StoreContainer" CdmEntityContainer="AIPEntities9">
+    <EntitySetMapping Name="G3_Measure_ABG">
+      <EntityTypeMapping TypeName="AIPModel4.G3_Measure_ABG">
+        <MappingFragment StoreEntitySet="G3_Measure_ABG">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Userid" ColumnName="Userid" />
+          <ScalarProperty Name="SpO2" ColumnName="SpO2" />
+          <ScalarProperty Name="MeasurementDate" ColumnName="MeasurementDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Score" ColumnName="Score" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
